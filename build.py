@@ -299,6 +299,19 @@ def render(nodes, ctx):
 # Build
 # --------------------------------------------------------------------------
 
+def gallery_shapes(n: int) -> list[str]:
+    """Tile shapes for the 6-column desktop grid, chosen so every count fills
+    the grid with no holes. w4 = 4x2 wide, t = 2x3 tall, s = 2x2, h3 = 3x2,
+    full = 6x3 panorama."""
+    block = ["w4", "t", "s", "s", "t", "w4"]
+    tail = {0: [], 1: ["full"], 2: ["h3", "h3"], 3: ["s", "s", "s"],
+            4: ["w4", "s", "s", "w4"], 5: ["w4", "s", "s", "s", "s"]}
+    if n % 6 == 1 and n > 1:
+        # 7, 13, ...: split the last block's closing wide tile into two squares
+        return block * (n // 6 - 1) + block[:-1] + ["s", "s"]
+    return block * (n // 6) + tail[n % 6]
+
+
 def fmt_count(n: int) -> str:
     return f"{n:,}"
 
@@ -309,10 +322,11 @@ def context(lead: dict) -> dict:
     pal = palette(lead["accent"], lead["mood"])
     css_vars = ";".join(f"--{k}:{v}" for k, v in pal.items() if k != "scheme")
 
+    shapes = gallery_shapes(lead["photos"])
     gallery = []
     for i in range(1, lead["photos"] + 1):
-        gallery.append({"src": f"img/g{i}.jpg", "index": i - 1,
-                        "alt": f"{lead['name']}, photo {i}"})
+        gallery.append({"src": f"img/g{i}.jpg", "index": i - 1, "n": i,
+                        "shape": shapes[i - 1], "alt": f"{lead['name']}, photo {i}"})
 
     rooms = []
     for i, r in enumerate(lead.get("rooms") or [], 1):
@@ -343,6 +357,9 @@ def context(lead: dict) -> dict:
         "mood": lead["mood"],
         "highlights": lead["highlights"],
         "gallery": gallery,
+        "gallery_count": len(gallery),
+        "theme_color": pal["bg"],
+        "reviews_count": len(reviews),
         "rooms": rooms,
         "amenities": [{"label": a, "icon": icon_for(a)} for a in lead["amenities"]],
         "reviews": reviews,
@@ -368,7 +385,7 @@ def build(lead: dict, template_nodes) -> Path:
     html = render(template_nodes, context(lead))
     out = DEMOS / lead["slug"] / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(html, encoding="utf-8")
+    out.write_text(html, encoding="utf-8", newline="\n")
     return out
 
 
