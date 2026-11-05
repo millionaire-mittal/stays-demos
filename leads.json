@@ -1,1 +1,134 @@
-[]
+[
+  {
+    "slug": "example-homestay",
+    "name": "Mistwood Homestay",
+    "type": "Hill homestay",
+    "town": "Madikeri",
+    "region": "Coorg, Karnataka",
+    "country": "India",
+    "phone": "+91 98450 00000",
+    "whatsapp": "919845000000",
+    "rating": 4.9,
+    "review_count": 214,
+    "maps_link": "https://www.google.com/maps/search/?api=1&query=Madikeri%2C%20Coorg%2C%20Karnataka",
+    "checkin": "12:00 pm",
+    "checkout": "11:00 am",
+    "headline": "A family home in the coffee hills, where the mist comes up the valley every morning.",
+    "subline": "Four rooms on a working coffee and pepper estate, run by the same family for three generations. Home-cooked Kodava meals, long walks through the plantation, and evenings by the fire.",
+    "highlights": [
+      "Wake up above the clouds on a 40-acre coffee estate",
+      "Kodava home cooking, three meals a day, from the family kitchen",
+      "Guided plantation walks and a stream you can swim in"
+    ],
+    "amenities": [
+      "Home-cooked meals",
+      "Free Wi-Fi",
+      "Free parking",
+      "Bonfire evenings",
+      "Plantation walks",
+      "Hot water",
+      "Valley view",
+      "Power backup",
+      "Family friendly"
+    ],
+    "reviews": [
+      {
+        "text": "We came for two nights and stayed five. The food alone is worth the drive, and waking up to the valley full of mist is something we'll never forget.",
+        "name": "Ananya Rao"
+      },
+      {
+        "text": "Feels like staying with family, not at a hotel. Uncle took us around the estate and explained how the coffee is grown. Spotless rooms and the warmest hosts.",
+        "name": "Rohit Menon"
+      },
+      {
+        "text": "Peaceful, green and completely away from the noise. The bonfire under the stars was the highlight of our trip to Coorg.",
+        "name": "Sara Thomas"
+      }
+    ],
+    "nearby": [
+      "Abbey Falls, 9 km",
+      "Raja's Seat, 6 km",
+      "Madikeri Fort, 5 km",
+      "Dubare Elephant Camp, 32 km",
+      "Talacauvery, 44 km"
+    ],
+    "accent": "#2f5d46",
+    "mood": "dark",
+    "photos": 6
+  },
+  {
+    "slug": "example-beach-villa",
+    "name": "Casa Areia",
+    "type": "Beach villa",
+    "town": "Morjim",
+    "region": "North Goa",
+    "country": "India",
+    "phone": "+91 98220 00000",
+    "whatsapp": "919822000000",
+    "rating": 4.8,
+    "review_count": 137,
+    "maps_link": "https://www.google.com/maps/search/?api=1&query=Morjim%20Beach%2C%20Goa",
+    "checkin": "2:00 pm",
+    "checkout": "11:00 am",
+    "headline": "A whitewashed Portuguese villa, two minutes' walk from a quiet stretch of sand.",
+    "subline": "Three bedrooms around a shaded courtyard and a small pool, with mango trees, slow mornings and the sound of the sea at night. Book a room, or take the whole house.",
+    "highlights": [
+      "Two minutes on foot to one of Goa's quietest beaches",
+      "Restored 1920s Portuguese house with a private courtyard pool",
+      "Goan breakfast cooked fresh every morning by our housekeeper"
+    ],
+    "amenities": [
+      "Private pool",
+      "Breakfast included",
+      "Beach access",
+      "Air conditioning",
+      "Free Wi-Fi",
+      "Free parking",
+      "Garden",
+      "Shared kitchen",
+      "Scooter hire",
+      "Airport pickup"
+    ],
+    "rooms": [
+      {
+        "name": "The Courtyard Room",
+        "sleeps": 2,
+        "note": "King bed, opens straight onto the pool and the mango tree."
+      },
+      {
+        "name": "The Terracotta Suite",
+        "sleeps": 3,
+        "note": "Our largest room, with a daybed, a reading corner and a private balcony."
+      },
+      {
+        "name": "The Garden Room",
+        "sleeps": 2,
+        "note": "Quiet and cool, with a four-poster bed and an outdoor shower."
+      }
+    ],
+    "reviews": [
+      {
+        "text": "The most beautiful house we've stayed in anywhere in Goa. Quiet, spotless, and the beach is right there. Breakfast by the pool every morning was a dream.",
+        "name": "Meera Kapoor"
+      },
+      {
+        "text": "Perfect for our family of five. The hosts helped with everything from scooters to restaurant tips. We're already planning to come back next winter.",
+        "name": "Daniel Fernandes"
+      },
+      {
+        "text": "Old Goa charm with every comfort you need. You hear the waves at night and wake up to birds in the garden. Truly a hidden gem.",
+        "name": "Priya Nair"
+      }
+    ],
+    "nearby": [
+      "Morjim Beach, 200 m",
+      "Ashwem Beach, 3 km",
+      "Chapora Fort, 8 km",
+      "Anjuna flea market, 12 km",
+      "Mopa Airport, 22 km"
+    ],
+    "accent": "#c2a27a",
+    "mood": "light",
+    "photos": 7
+  }
+]
