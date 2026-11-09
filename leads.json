@@ -354,5 +354,135 @@
     "accent": "#1F6F5C",
     "mood": "light",
     "photos": 8
+  },
+  {
+    "slug": "villa-baba-lovina",
+    "name": "Villa Baba Sunset Beach Inn",
+    "type": "Beachfront inn",
+    "town": "Temukus, Lovina",
+    "region": "Banjar, Buleleng, North Bali",
+    "country": "Indonesia",
+    "phone": "+62 817 9738 774",
+    "whatsapp": "628179738774",
+    "rating": 4.7,
+    "review_count": 29,
+    "maps_link": "https://www.google.com/maps/search/?api=1&query=Villa+Baba+Sunset+Beach+Inn+Bali",
+    "map_query": "Villa Baba Sunset Beach Inn, Temukus, Bali",
+    "checkin": "2:00 pm",
+    "checkout": "12:00 pm",
+    "headline": "Your little beachfront escape in North Bali.",
+    "subline": "Wake up to the sound of the ocean and experience the laid-back charm of North Bali at Villa Baba Sunset Beach Inn. Set along the coastline of Temukus, near Lovina, this intimate beachfront stay offers a relaxed setting for couples, families and travellers looking to slow down. Spend peaceful moments by the pool, stroll along the shore, or take in the colours of a North Bali sunset right by the sea.",
+    "highlights": [
+      "Stay right by the sea, with direct access to the coastline and ocean views",
+      "Relax at your own pace by the pool and in the garden",
+      "Discover North Bali: Lovina, dolphin-watching, waterfalls and hot springs"
+    ],
+    "amenities": [
+      "Beachfront location",
+      "Direct beach access",
+      "Outdoor swimming pool",
+      "Beachside pier",
+      "Garden and outdoor spaces",
+      "Free Wi-Fi in all rooms",
+      "Air conditioning",
+      "On-site parking",
+      "Daily housekeeping",
+      "24-hour security",
+      "Television",
+      "Refrigerator",
+      "Living room / lounge area",
+      "Family accommodation",
+      "English and Indonesian spoken"
+    ],
+    "reviews": [
+      {
+        "name": "Raquelle",
+        "text": "Stopped in by chance while driving thru Lovina. Putu is the manager of this great little spot right on the water. I've only been here a few hours and feel like family already."
+      },
+      {
+        "name": "Guest",
+        "text": "Beautiful location, amazing staff and awesome villa ! Definitely I would recommend it as a must visit place in Lovina beach!"
+      },
+      {
+        "name": "Yulinda",
+        "text": "Very clean, with beautiful ocean and sunset views, and a pier that leads directly to the beach. The rooms are spacious enough for a family. The swimming pool is clean and well-maintained. Highly recommended, especially for family vacations."
+      }
+    ],
+    "day": {
+      "heading": "A day at *Villa Baba*",
+      "moments": [
+        {
+          "time": "Early morning",
+          "text": "Head out on a dolphin-watching trip along the Lovina coast."
+        },
+        {
+          "time": "Morning",
+          "text": "Come back for a slow, relaxed start to the day."
+        },
+        {
+          "time": "Midday",
+          "text": "Cool off with a swim and some downtime by the pool."
+        },
+        {
+          "time": "Afternoon",
+          "text": "Explore nearby waterfalls, temples or Banjar Hot Springs."
+        },
+        {
+          "time": "Late afternoon",
+          "text": "Return to the inn and unwind by the beach."
+        },
+        {
+          "time": "Sunset",
+          "text": "Watch the sun go down over the Bali Sea from the pier."
+        }
+      ]
+    },
+    "local": {
+      "heading": "Around *Lovina*",
+      "note": "Wake up early for Lovina's famous dolphin trips, bring swimwear and snorkelling gear for the coastline, try Banjar Hot Springs, and leave time in the evening for the sunset on the beach. Travel times are approximate.",
+      "cta": "Ask us on WhatsApp",
+      "wa_text": "Hi Villa Baba Sunset Beach Inn! Could you suggest things to do around Lovina during my stay?"
+    },
+    "nearby": [
+      "Lovina Beach and dolphin-trip departures — 3 min by car",
+      "Krisna Funtasticland — 3 min by car",
+      "Singsing Waterfall — 5 min by car",
+      "Banjar Hot Springs — 13 min by car",
+      "Brahmavihara-Arama Monastery — 13 min by car"
+    ],
+    "good_to_know": {
+      "heading": "Good to *know*",
+      "points": [
+        "Check-in: From 2:00 PM",
+        "Check-out: Until 12:00 PM",
+        "Located in Temukus, near Lovina, on North Bali's coastline",
+        "Three cottage rooms and one family room",
+        "Bathroom arrangements vary by room, so ask about yours before booking",
+        "Please confirm breakfast and tour arrangements directly with us",
+        "Pets are not allowed",
+        "No elevator and no designated smoking area",
+        "Special requests are subject to availability",
+        "Cancellation and prepayment policies vary by booking and room type"
+      ]
+    },
+    "booking": {
+      "heading": "Check availability on *WhatsApp*",
+      "subtext": "Message Villa Baba directly for available rooms, prices and booking details.",
+      "cta": "Message on WhatsApp",
+      "wa_text": "Hi Villa Baba Sunset Beach Inn! 👋\n\nI'd like to check availability for [check-in date] to [check-out date] for [number] guests.\n\nCould you please share the available room options, prices and booking details?\n\nThank you!"
+    },
+    "photo_labels": [
+      "Beachfront from above",
+      "Pool and pier",
+      "Four-poster bedroom",
+      "Morning on the pier",
+      "Wooden cottage room",
+      "Villa Baba sign",
+      "Outrigger boat on the bay",
+      "The coastline"
+    ],
+    "accent": "#C87950",
+    "mood": "light",
+    "photos": 8
   }
 ]
