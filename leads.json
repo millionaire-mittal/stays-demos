@@ -130,5 +130,229 @@
     "accent": "#c2a27a",
     "mood": "light",
     "photos": 7
+  },
+  {
+    "slug": "green-haven-munnar",
+    "name": "Green Haven Homestay",
+    "type": "Tea estate homestay",
+    "town": "Munnar",
+    "region": "Idukki, Kerala",
+    "country": "India",
+    "phone": "+91 94470 12345",
+    "whatsapp": "919447012345",
+    "rating": 4.8,
+    "review_count": 96,
+    "maps_link": "https://maps.app.goo.gl/AbCdEf123",
+    "map_query": "Green Haven Homestay, Munnar, Kerala",
+    "checkin": "12:00 pm",
+    "checkout": "10:30 am",
+    "headline": "Tea-garden views, Kerala breakfast and a balcony over the valley, at a family-run home 10 minutes from Munnar town.",
+    "subline": "A family-run homestay above the tea gardens, 10 minutes from Munnar town. Joseph and his family serve a home-cooked Kerala breakfast every morning, and the Valley Room’s private balcony looks straight out over the estate.",
+    "highlights": [
+      "Tea-garden views from a private balcony over the valley",
+      "Home-cooked Kerala breakfast, served every morning at 8:00 am",
+      "Family-run hospitality, 10 minutes from Munnar town"
+    ],
+    "hosts": {
+      "heading": "Meet Joseph and *His Family*",
+      "text": "Green Haven is a family-run homestay above the tea gardens in Munnar. Joseph and his family live on the property and personally look after guests during their stay.",
+      "points": [
+        "Family-run since we opened our home to guests",
+        "We enjoy sharing tea-estate walks, local food, and stories about life in Munnar",
+        "We are happy to help with directions, local recommendations, and travel plans"
+      ],
+      "alt": "Joseph and his family at Green Haven Homestay"
+    },
+    "day": {
+      "heading": "Life at *Green Haven*",
+      "moments": [
+        {
+          "time": "Morning",
+          "text": "Start the day with tea on the balcony, overlooking the tea gardens."
+        },
+        {
+          "time": "Breakfast",
+          "text": "Enjoy a home-cooked Kerala breakfast, served every morning at 8:00 am."
+        },
+        {
+          "time": "Daytime",
+          "text": "Take a walk through the tea estate directly from the homestay."
+        },
+        {
+          "time": "Evening",
+          "text": "Relax with valley views as the mist settles over Munnar."
+        }
+      ]
+    },
+    "local": {
+      "heading": "Local *recommendations*",
+      "note": "Joseph and his family are happy to suggest places to visit, local food spots, and the best times to go.",
+      "cta": "Ask Joseph on WhatsApp",
+      "wa_text": "Hi Joseph, we're planning a stay at Green Haven Homestay. Could you suggest some places to visit and local food spots?"
+    },
+    "help": {
+      "heading": "A little help from *the family*",
+      "points": [
+        "Tea-estate walk guidance",
+        "Directions to nearby attractions",
+        "Local food recommendations",
+        "We can help arrange local transport on request."
+      ]
+    },
+    "good_to_know": {
+      "heading": "Good to *know*",
+      "points": [
+        "Joseph and his family live on-site.",
+        "Kerala breakfast is served at 8:00 am.",
+        "Check-in from 12:00 pm; check-out by 10:30 am.",
+        "Free parking is available.",
+        "We can help arrange local transport on request.",
+        "For any special requests, message us on WhatsApp."
+      ]
+    },
+    "booking": {
+      "heading": "Book Directly with *Joseph*",
+      "subtext": "No platform fees. Quick WhatsApp replies and personal help planning your stay.",
+      "cta": "WhatsApp Joseph",
+      "wa_text": "Hi Joseph, I’d like to check availability at Green Haven Homestay.",
+      "room_wa_text": "Hi Joseph, I’d like to check availability for the {room} at {name}."
+    },
+    "photo_labels": [
+      "Exterior",
+      "Tea-garden view",
+      "Valley Room",
+      "Balcony",
+      "Bathroom",
+      "Kerala breakfast",
+      "Common area",
+      "Nearby estate walk"
+    ],
+    "amenities": [
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Free parking",
+      "Hot water",
+      "Valley view",
+      "Balcony"
+    ],
+    "rooms": [
+      {
+        "name": "Valley Room",
+        "sleeps": 2,
+        "note": "Double bed and a private balcony facing the estate."
+      }
+    ],
+    "reviews": [
+      {
+        "text": "Placeholder: paste a real Google review here, word for word, before showing this demo.",
+        "name": "Guest",
+        "placeholder": true
+      },
+      {
+        "text": "Placeholder: paste a real Google review here, word for word, before showing this demo.",
+        "name": "Guest",
+        "placeholder": true
+      },
+      {
+        "text": "Placeholder: paste a real Google review here, word for word, before showing this demo.",
+        "name": "Guest",
+        "placeholder": true
+      }
+    ],
+    "nearby": [
+      "Tea Museum — 3 km",
+      "Mattupetty Dam — 13 km",
+      "Eravikulam National Park — 15 km",
+      "Munnar town and market — 10 minutes’ drive"
+    ],
+    "accent": "#3c6e57",
+    "mood": "dark",
+    "photos": 8
+  },
+  {
+    "slug": "sari-bungalows-pemuteran",
+    "name": "The Sari Bungalows",
+    "type": "Garden bungalow guesthouse",
+    "town": "Pemuteran",
+    "region": "Gerokgak, Buleleng Regency",
+    "country": "Indonesia",
+    "phone": "+62 813 5301 0506",
+    "whatsapp": "6281353010506",
+    "rating": 4.7,
+    "review_count": 207,
+    "maps_link": "https://www.google.com/maps/search/?api=1&query=The%20Sari%20Bungalows%2C%20Pemuteran%2C%20Bali",
+    "map_query": "The Sari Bungalows, Pemuteran, Bali",
+    "checkin": "2:00 pm",
+    "checkout": "12:00 pm",
+    "headline": "A quiet tropical-garden base for Pemuteran, snorkelling and Menjangan trips.",
+    "subline": "The Sari Bungalows is a small, relaxed guesthouse in Pemuteran, set in a lush tropical garden just off North Bali’s main road. Guests consistently praise the clean, comfortable rooms, friendly staff, refreshing pool and tasty included breakfast. Its quiet location is close to Pemuteran Beach, restaurants, snorkelling trips and the diving area around Menjangan Island.",
+    "highlights": [
+      "Lush tropical garden and peaceful location",
+      "Clean, comfortable rooms and a refreshing pool",
+      "Breakfast included and close to Pemuteran Beach"
+    ],
+    "amenities": [
+      "Swimming pool",
+      "Breakfast included",
+      "Garden and outdoor spaces",
+      "Wi-Fi in public areas",
+      "Bicycle rental",
+      "24-hour front desk",
+      "Wake-up service",
+      "Open-air bath",
+      "Balconies with garden views",
+      "Pool with a view"
+    ],
+    "reviews": [
+      {
+        "name": "Hannah",
+        "text": "INCREDIBLE Homestay with wonderful hosts! The room was incredible, the grounds beautiful and spacious, it included breakfast and had a lovely pool. For the price it was absolutely unreal. Would definitely come back to this place! I went by myself but would be really cute for a couple! Terima Kasih!"
+      },
+      {
+        "name": "Nico",
+        "text": "Absolutely perfect! The room are clean and super comfy, and the bathroom is so cool. The staff is very kind and friendly, the swimming pool is great and the breakfast is consistent and tasty. Ideally placed in a quiet area, close to the beach and restaurants. I strongly recommend!"
+      },
+      {
+        "name": "J. W.",
+        "text": "We definitely recommend this nice, clean and authentic place. Made, the owner, is super nice, helped us with the further option to travel and was so heartwarming. Also the staff was so kind and always had a smile. The pool, the room and the common places were super clean. The cleanest one we had on our travel!!!! They breakfast is also very nice and you have a big selection.\nThank you for everything!"
+      }
+    ],
+    "nearby": [
+      "Pemuteran Beach — 600 m (6-minute walk)",
+      "Biorock — 25 minutes’ walk",
+      "Pemuteran village restaurants — walking distance"
+    ],
+    "good_to_know": {
+      "heading": "Good to *know*",
+      "points": [
+        "Check-in: From 2:00 PM",
+        "Check-out: Until 12:00 PM",
+        "Children of all ages are welcome",
+        "Cribs and extra beds are not available",
+        "No age requirement for check-in",
+        "Pets are not allowed",
+        "Special requests can be added during booking",
+        "Cancellation and prepayment policies vary by room type"
+      ]
+    },
+    "booking": {
+      "heading": "Check availability on *WhatsApp*",
+      "subtext": "Message The Sari Bungalows directly for available room options and prices.",
+      "cta": "Message on WhatsApp",
+      "wa_text": "Hi The Sari Bungalows, I’d like to check availability for [check-in date] to [check-out date] for [number] guests. Could you please share the available room options and price?"
+    },
+    "photo_labels": [
+      "Pool and bungalows",
+      "Twin room",
+      "Pool at sunset",
+      "Breakfast on the terrace",
+      "Garden loungers",
+      "Open-air dining area",
+      "Nearby beach",
+      "Snorkelling boats"
+    ],
+    "accent": "#1F6F5C",
+    "mood": "light",
+    "photos": 8
   }
 ]

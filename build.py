@@ -86,10 +86,53 @@ def validate(lead: dict) -> list[str]:
         ):
             errs.append("'rooms' must be a list of {name, sleeps, note}")
 
+    # Optional sections
+    def strs(v, lo, hi):
+        return isinstance(v, list) and lo <= len(v) <= hi and all(isinstance(x, str) and x.strip() for x in v)
+
+    hosts = lead.get("hosts")
+    if hosts is not None:
+        if not isinstance(hosts, dict) or not hosts.get("heading") or not hosts.get("text") \
+                or not strs(hosts.get("points"), 1, 4):
+            errs.append("'hosts' must be {heading, text, points: 1 to 4 short strings}")
+    day = lead.get("day")
+    if day is not None:
+        moments = day.get("moments") if isinstance(day, dict) else None
+        if not isinstance(day, dict) or not day.get("heading") or not isinstance(moments, list) \
+                or not 2 <= len(moments) <= 6 \
+                or not all(isinstance(m, dict) and m.get("time") and m.get("text") for m in moments):
+            errs.append("'day' must be {heading, moments: 2 to 6 x {time, text}}")
+    local = lead.get("local")
+    if local is not None:
+        if not isinstance(local, dict) or not local.get("note"):
+            errs.append("'local' must be {note} (optional: heading, cta, wa_text); places come from 'nearby'")
+    help_ = lead.get("help")
+    if help_ is not None:
+        if not isinstance(help_, dict) or not help_.get("heading") or not strs(help_.get("points"), 1, 6):
+            errs.append("'help' must be {heading, points: 1 to 6 short strings}")
+    gtk = lead.get("good_to_know")
+    if gtk is not None:
+        if not isinstance(gtk, dict) or not strs(gtk.get("points"), 1, 10):
+            errs.append("'good_to_know' must be {points: 1 to 10 short strings} (optional: heading)")
+    booking = lead.get("booking")
+    if booking is not None:
+        if not isinstance(booking, dict) or not all(booking.get(k) for k in ("heading", "subtext", "cta", "wa_text")):
+            errs.append("'booking' must be {heading, subtext, cta, wa_text} (optional: room_wa_text)")
+    labels = lead.get("photo_labels")
+    if labels is not None and isinstance(lead.get("photos"), int):
+        if not strs(labels, lead["photos"], lead["photos"]):
+            errs.append(f"'photo_labels' must have exactly {lead['photos']} strings, one per gallery photo")
+    if isinstance(lead.get("reviews"), list):
+        for r in lead["reviews"]:
+            if isinstance(r, dict) and "placeholder" in r and not isinstance(r["placeholder"], bool):
+                errs.append("a review's 'placeholder' must be true or false")
+
     # Images
     if not errs:
         img = DEMOS / slug / "img"
         need = ["hero.jpg"] + [f"g{i}.jpg" for i in range(1, lead["photos"] + 1)]
+        if hosts is not None:
+            need.append(hosts.get("photo", "hosts.jpg"))
         missing = [n for n in need if not (img / n).is_file()]
         if missing:
             errs.append(f"missing image(s) in demos/{slug}/img/: {', '.join(missing)}")
@@ -179,7 +222,8 @@ ICON_RULES = [
     ("drop", r"hot water|geyser|shower"),
     ("laptop", r"work|desk"),
     ("sun", r"terrace|deck|veranda|balcony|sun"),
-    ("car", r"pickup|pick-up|transfer|taxi|airport"),
+    ("car", r"pickup|pick-up|transfer|taxi|airport|transport"),
+    ("pin", r"direction|attraction|\bmap\b"),
     ("bike", r"bike|cycle|bicycle|scooter"),
     ("tv", r"\btv\b|television"),
     ("shirt", r"laundry|washing"),
@@ -312,6 +356,67 @@ def gallery_shapes(n: int) -> list[str]:
     return block * (n // 6) + tail[n % 6]
 
 
+def heading_html(text: str) -> str:
+    """Escape a heading and turn *word* into the accent italic <em>word</em>."""
+    return re.sub(r"\*([^*]+)\*", r"<em>\1</em>", escape(text))
+
+
+def split_place(s: str) -> dict:
+    """'Tea Museum — 3 km' or 'Tea Museum, 3 km' -> {name, distance}."""
+    for sep in (" — ", " – ", " - "):
+        if sep in s:
+            name, dist = s.rsplit(sep, 1)
+            return {"name": name.strip(), "distance": dist.strip()}
+    if ", " in s:
+        name, dist = s.rsplit(", ", 1)
+        return {"name": name.strip(), "distance": dist.strip()}
+    return {"name": s.strip(), "distance": ""}
+
+
+def optional_sections(lead: dict) -> dict:
+    out = {"hosts": None, "day": None, "local": None, "show_around": True}
+    h = lead.get("hosts")
+    if h:
+        out["hosts"] = {
+            "heading_html": heading_html(h["heading"]),
+            "text": h["text"],
+            "points": h["points"],
+            "photo": "img/" + h.get("photo", "hosts.jpg"),
+            "alt": h.get("alt", f"The hosts at {lead['name']}"),
+        }
+    d = lead.get("day")
+    if d:
+        out["day"] = {"heading_html": heading_html(d["heading"]), "moments": d["moments"]}
+    loc = lead.get("local")
+    if loc:
+        wa_text = loc.get("wa_text") or f"Hi, we're planning a stay at {lead['name']}. Could you suggest some places to visit nearby?"
+        out["local"] = {
+            "heading_html": heading_html(loc.get("heading", "Local *recommendations*")),
+            "note": loc["note"],
+            "cta": loc.get("cta", "Ask us on WhatsApp"),
+            "wa_href": f"https://wa.me/{lead['whatsapp']}?text={quote(wa_text)}",
+            "places": [split_place(p) for p in lead["nearby"]],
+        }
+        out["show_around"] = False  # the places are listed in this section instead
+    hp = lead.get("help")
+    out["help"] = hp and {
+        "heading_html": heading_html(hp["heading"]),
+        "points": [{"text": t, "icon": icon_for(t)} for t in hp["points"]],
+    }
+    g = lead.get("good_to_know")
+    out["good_to_know"] = g and {
+        "heading_html": heading_html(g.get("heading", "Good to *know*")),
+        "points": g["points"],
+    }
+    b = lead.get("booking")
+    out["booking"] = b and {**b, "heading_html": heading_html(b["heading"])}
+    out["no_booking"] = not b
+    # WhatsApp-first: with `booking`, every main WhatsApp button pre-fills its message
+    out["wa_main_href"] = (f"https://wa.me/{lead['whatsapp']}?text={quote(b['wa_text'])}" if b
+                           else f"https://wa.me/{lead['whatsapp']}")
+    return out
+
+
 def fmt_count(n: int) -> str:
     return f"{n:,}"
 
@@ -323,10 +428,14 @@ def context(lead: dict) -> dict:
     css_vars = ";".join(f"--{k}:{v}" for k, v in pal.items() if k != "scheme")
 
     shapes = gallery_shapes(lead["photos"])
+    labels = lead.get("photo_labels")
+    booking = lead.get("booking")
     gallery = []
     for i in range(1, lead["photos"] + 1):
         gallery.append({"src": f"img/g{i}.jpg", "index": i - 1, "n": i,
-                        "shape": shapes[i - 1], "alt": f"{lead['name']}, photo {i}"})
+                        "shape": shapes[i - 1],
+                        "caption": labels[i - 1] if labels else "",
+                        "alt": f"{lead['name']}: {labels[i - 1]}" if labels else f"{lead['name']}, photo {i}"})
 
     rooms = []
     for i, r in enumerate(lead.get("rooms") or [], 1):
@@ -342,9 +451,14 @@ def context(lead: dict) -> dict:
             "note": r.get("note", ""),
             "src": src,
             "num": f"{i:02d}",
+            "wa_href": booking and f"https://wa.me/{lead['whatsapp']}?text=" + quote(
+                booking.get("room_wa_text", "Hi, I'd like to check availability for the {room} at {name}.")
+                .format(room=r["name"], name=lead["name"])),
         })
 
-    reviews = [{"text": r["text"].strip(), "first": r["name"].split()[0]} for r in lead["reviews"]]
+    reviews = [{"text": r["text"].strip(), "first": r["name"].split()[0],
+                "source": "Review placeholder" if r.get("placeholder") else "Google review"}
+               for r in lead["reviews"]]
     page_url = f"{BASE_URL}/{slug}/"
     rating = float(lead["rating"])
 
@@ -365,6 +479,7 @@ def context(lead: dict) -> dict:
         "reviews": reviews,
         "multi_reviews": len(reviews) > 1,
         "nearby": lead["nearby"],
+        **optional_sections(lead),
         "map_src": map_query(lead),
         "page_url": page_url,
         "og_image": page_url + "img/hero.jpg",

@@ -44,6 +44,10 @@ section{padding:clamp(72px,10vw,140px) 0}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 30px;border-radius:999px;border:0;background:var(--accent);color:var(--on-accent);font:500 15px/1 var(--sans);letter-spacing:.02em;text-decoration:none;cursor:pointer;transition:transform .3s var(--ease),filter .3s}
 .btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
 .btn svg{width:16px;height:16px}
+.btn--line{background:transparent;color:var(--text);border:1px solid var(--line)}
+.btn--line:hover{border-color:var(--accent);filter:none}
+.btn--ghost{background:rgba(255,255,255,.08);color:#fbf8f2;border:1px solid rgba(255,255,255,.45)}
+.btn--ghost:hover{background:rgba(255,255,255,.16);filter:none}
 .icon{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;flex:none}
 
 /* ---------- Hero ---------- */
@@ -73,6 +77,67 @@ section{padding:clamp(72px,10vw,140px) 0}
 .highlights li{border-top:1px solid var(--line);padding-top:26px}
 .highlights .num{display:block;font:300 clamp(3rem,5vw,4.5rem)/1 var(--serif);font-style:italic;color:var(--accent);margin-bottom:20px;letter-spacing:-.03em}
 .highlights p{margin:0;font:400 clamp(1.05rem,1.3vw,1.2rem)/1.5 var(--sans);max-width:24ch}
+
+/* ---------- Hosts (optional) ---------- */
+.hosts{background:var(--surface)}
+.hosts__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,7vw,112px);align-items:center}
+.hosts__img{margin:0;aspect-ratio:4/5;overflow:hidden;background:var(--bg);border-radius:2px}
+.hosts__img img{width:100%;height:100%;object-fit:cover}
+.hosts__lede{font:300 clamp(1.25rem,1.8vw,1.55rem)/1.5 var(--serif);margin:0 0 40px;max-width:34ch;text-wrap:pretty}
+.hosts__points{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.hosts__points li{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line)}
+.hosts__points .icon{color:var(--accent);width:22px;height:22px;margin-top:2px}
+
+/* ---------- A day here (optional) ---------- */
+.day__head{margin-bottom:clamp(40px,6vw,80px)}
+.day__list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(24px,3vw,48px);position:relative}
+.day__list::before{content:"";position:absolute;left:0;right:0;top:6px;height:1px;background:var(--line)}
+.day__list li{position:relative;padding-top:44px}
+.day__dot{position:absolute;top:0;left:0;width:13px;height:13px;border-radius:50%;background:var(--bg);border:1px solid var(--accent)}
+.day__time{font:300 italic clamp(1.6rem,2.4vw,2.1rem)/1 var(--serif);color:var(--accent);margin:0 0 16px}
+.day__text{margin:0;max-width:28ch}
+
+/* ---------- Local recommendations (optional) ---------- */
+.local__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,6vw,96px);align-items:start}
+.local__note{color:var(--muted);max-width:34ch;margin:0 0 32px}
+.local__list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.local__list li{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.local__name{font:300 clamp(1.3rem,2vw,1.75rem)/1.2 var(--serif)}
+.local__dist{font:500 12px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:right;flex:none}
+.local + .location{padding-top:0}
+
+/* ---------- Host-guided help (optional) ---------- */
+.help__head{margin-bottom:clamp(36px,5vw,64px)}
+.help__list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,1.6vw,24px)}
+.help__list li{border:1px solid var(--line);border-radius:4px;padding:28px 24px 30px}
+.help__list .icon{color:var(--accent);width:28px;height:28px}
+.help__list p{margin:22px 0 0;font:300 1.2rem/1.4 var(--serif)}
+.help + .local{padding-top:0}
+
+/* ---------- Good to know (optional) ---------- */
+.gtk{background:var(--surface)}
+.gtk__grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(32px,6vw,96px);align-items:start}
+.gtk__list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(24px,3vw,48px);border-top:1px solid var(--line)}
+.gtk__list li{display:flex;gap:14px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--line)}
+.gtk__list .icon{color:var(--accent);width:20px;height:20px;margin-top:3px}
+
+/* ---------- Book directly (optional) ---------- */
+.enq__intro .enq__sub{font:300 clamp(1.15rem,1.6vw,1.35rem)/1.5 var(--serif);color:var(--text);max-width:30ch}
+.enq__actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:32px 0 36px;max-width:420px}
+.enq__actions .btn:first-child{grid-column:1/-1}
+.enq__actions .btn--line{padding:0 14px;font-size:14px;white-space:nowrap}
+.enq__facts{margin:0;border-top:1px solid var(--line);max-width:420px}
+.enq__facts div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.enq__facts dt{color:var(--muted)}
+.enq__facts dd{margin:0;text-align:right}
+.enq__facts a{text-decoration:none;border-bottom:1px solid var(--accent)}
+.form__title{grid-column:1/-1;margin:0 0 -4px;font:300 1.5rem/1.2 var(--serif)}
+.room__wa{margin-top:26px}
+
+/* ---------- Floating WhatsApp (desktop, optional) ---------- */
+.fab{position:fixed;right:28px;bottom:28px;z-index:45;display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 24px 0 20px;border-radius:999px;background:var(--accent);color:var(--on-accent);font:500 15px/1 var(--sans);text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.28);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.fab svg{width:20px;height:20px}
+.fab.is-on,.no-js .fab{opacity:1;transform:none;pointer-events:auto}
 
 /* ---------- Gallery ---------- */
 .gallery{padding-top:0}
@@ -199,7 +264,10 @@ footer{background:var(--surface);padding:clamp(64px,8vw,104px) 0 40px}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px){
-  .amen__layout,.loc,.enq{grid-template-columns:minmax(0,1fr)}
+  .amen__layout,.loc,.enq,.hosts__grid,.local__grid,.gtk__grid{grid-template-columns:minmax(0,1fr)}
+  .help__list{grid-template-columns:1fr 1fr}
+  .day__list{grid-template-columns:1fr 1fr;row-gap:48px}
+  .day__list::before{display:none}
   .room,.room:nth-child(even){grid-template-columns:minmax(0,1fr);gap:28px}
   .room:nth-child(even) .room__img{order:0}
   .foot{grid-template-columns:1fr 1fr}
@@ -216,6 +284,13 @@ footer{background:var(--surface);padding:clamp(64px,8vw,104px) 0 40px}
   .quotes{margin-top:32px}
   .hero__row{gap:14px}
   .hero__row .btn{flex:1 1 100%}
+  .hero__row .btn--ghost{min-height:48px}
+  .fab{display:none}
+  .help__list li{padding:20px 18px 22px}
+  .help__list p{font-size:1.05rem;margin-top:16px}
+  .gtk__list{grid-template-columns:minmax(0,1fr)}
+  .enq__actions{max-width:none;grid-template-columns:minmax(0,1fr)}
+  .enq__facts{max-width:none}
   .highlights{grid-template-columns:minmax(0,1fr);gap:36px}
   .highlights .num{font-size:2.8rem;margin-bottom:14px}
   .gallery__head{display:block}
@@ -224,6 +299,16 @@ footer{background:var(--surface);padding:clamp(64px,8vw,104px) 0 40px}
   .grid::-webkit-scrollbar{display:none}
   .tile{flex:0 0 80%;aspect-ratio:4/5;scroll-snap-align:start}
   .tile--w4,.tile--h3,.tile--full{aspect-ratio:4/5}
+  .hosts__img{aspect-ratio:1/1}
+  .hosts__lede{margin-bottom:28px}
+  .day__list{grid-template-columns:minmax(0,1fr);row-gap:36px}
+  .day__list::before{display:block;left:6px;right:auto;top:8px;bottom:8px;width:1px;height:auto}
+  .day__list li{padding:0 0 0 40px}
+  .day__dot{top:.55em}
+  .day__time{font-size:1.6rem;margin-bottom:10px}
+  .local__list li{padding:18px 0;gap:16px}
+  .local__name{font-size:1.25rem}
+  .local__dist{font-size:11px;letter-spacing:.12em}
   .amen__grid{grid-template-columns:1fr 1fr}
   .amen__grid li{gap:12px;font-size:14px;padding:18px 6px 18px 0}
   .form{grid-template-columns:1fr 1fr;gap:24px 18px}
@@ -245,6 +330,7 @@ footer{background:var(--surface);padding:clamp(64px,8vw,104px) 0 40px}
 </style>
 </head>
 <body>
+<div class="demo-banner" role="note" style="position:sticky;top:0;z-index:46;background:#111;color:#fff;text-align:center;font:500 13px/1.3 system-ui,-apple-system,'Segoe UI',sans-serif;letter-spacing:.02em;padding:8px 16px">This is a demo website only.</div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
@@ -274,6 +360,7 @@ footer{background:var(--surface);padding:clamp(64px,8vw,104px) 0 40px}
     <symbol id="i-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
     <symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></symbol>
     <symbol id="i-out" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.5H9l1.4 4-2 1.3a11 11 0 0 0 6.3 6.3l1.3-2 4 1.4v2.4a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z"/></symbol>
     <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20.5l1.2-4.1A8.5 8.5 0 1 1 8.6 19.6z"/><path d="M9.2 8.2c.3-.5.6-.5.9-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2 0 .5-.1.7l-.5.6c-.1.2-.2.4 0 .6.6 1 1.4 1.8 2.4 2.4.2.1.4.1.6 0l.6-.6c.2-.2.4-.2.7-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3-.1.7-.5.9-.6.4-1.6.6-2.6.3a9.5 9.5 0 0 1-5-5c-.3-1-.1-2 .3-2.6z"/></symbol>
@@ -292,6 +379,7 @@ footer{background:var(--surface);padding:clamp(64px,8vw,104px) 0 40px}
     <p class="hero__headline">A family home in the coffee hills, where the mist comes up the valley every morning.</p>
     <div class="hero__row">
       <a class="btn" href="#enquire">Check availability</a>
+      
       <a class="badge" href="https://www.google.com/maps/search/?api=1&amp;query=Madikeri%2C%20Coorg%2C%20Karnataka" target="_blank" rel="noopener" aria-label="Rated 4.9 out of 5 from 214 Google reviews">
         <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>4.9 <span>&middot; 214 Google reviews</span>
       </a>
@@ -316,6 +404,10 @@ footer{background:var(--surface);padding:clamp(64px,8vw,104px) 0 40px}
   </div>
 </section>
 
+
+
+
+
 <section class="gallery" aria-labelledby="gallery-h">
   <div class="wrap">
     <div class="gallery__head reveal">
@@ -326,12 +418,12 @@ footer{background:var(--surface);padding:clamp(64px,8vw,104px) 0 40px}
       <p class="gallery__hint">Tap any photo to open it full screen.</p>
     </div>
     <div class="grid" id="grid">
-      <button class="tile tile--w4 reveal" type="button" data-i="0" aria-label="Open photo 1 of 6"><img src="img/g1.jpg" alt="Mistwood Homestay, photo 1" loading="lazy" decoding="async"></button>
-      <button class="tile tile--t reveal" type="button" data-i="1" aria-label="Open photo 2 of 6"><img src="img/g2.jpg" alt="Mistwood Homestay, photo 2" loading="lazy" decoding="async"></button>
-      <button class="tile tile--s reveal" type="button" data-i="2" aria-label="Open photo 3 of 6"><img src="img/g3.jpg" alt="Mistwood Homestay, photo 3" loading="lazy" decoding="async"></button>
-      <button class="tile tile--s reveal" type="button" data-i="3" aria-label="Open photo 4 of 6"><img src="img/g4.jpg" alt="Mistwood Homestay, photo 4" loading="lazy" decoding="async"></button>
-      <button class="tile tile--t reveal" type="button" data-i="4" aria-label="Open photo 5 of 6"><img src="img/g5.jpg" alt="Mistwood Homestay, photo 5" loading="lazy" decoding="async"></button>
-      <button class="tile tile--w4 reveal" type="button" data-i="5" aria-label="Open photo 6 of 6"><img src="img/g6.jpg" alt="Mistwood Homestay, photo 6" loading="lazy" decoding="async"></button>
+      <button class="tile tile--w4 reveal" type="button" data-i="0" data-caption="" aria-label="Open photo 1 of 6"><img src="img/g1.jpg" alt="Mistwood Homestay, photo 1" loading="lazy" decoding="async"></button>
+      <button class="tile tile--t reveal" type="button" data-i="1" data-caption="" aria-label="Open photo 2 of 6"><img src="img/g2.jpg" alt="Mistwood Homestay, photo 2" loading="lazy" decoding="async"></button>
+      <button class="tile tile--s reveal" type="button" data-i="2" data-caption="" aria-label="Open photo 3 of 6"><img src="img/g3.jpg" alt="Mistwood Homestay, photo 3" loading="lazy" decoding="async"></button>
+      <button class="tile tile--s reveal" type="button" data-i="3" data-caption="" aria-label="Open photo 4 of 6"><img src="img/g4.jpg" alt="Mistwood Homestay, photo 4" loading="lazy" decoding="async"></button>
+      <button class="tile tile--t reveal" type="button" data-i="4" data-caption="" aria-label="Open photo 5 of 6"><img src="img/g5.jpg" alt="Mistwood Homestay, photo 5" loading="lazy" decoding="async"></button>
+      <button class="tile tile--w4 reveal" type="button" data-i="5" data-caption="" aria-label="Open photo 6 of 6"><img src="img/g6.jpg" alt="Mistwood Homestay, photo 6" loading="lazy" decoding="async"></button>
       
     </div>
   </div>
@@ -390,6 +482,10 @@ footer{background:var(--surface);padding:clamp(64px,8vw,104px) 0 40px}
   </div>
 </section>
 
+
+
+
+
 <section class="location" aria-labelledby="loc-h">
   <div class="wrap loc">
     <div class="reveal">
@@ -415,14 +511,18 @@ footer{background:var(--surface);padding:clamp(64px,8vw,104px) 0 40px}
   </div>
 </section>
 
+
+
 <section class="enquire" id="enquire" aria-labelledby="enq-h">
   <div class="wrap enq">
     <div class="enq__intro reveal">
       <p class="kicker">Stay with us</p>
       <h2 id="enq-h">Check <em>availability</em></h2>
       <p>Choose your dates and send them to us on WhatsApp. We'll reply to confirm.</p>
+      
     </div>
     <form class="form reveal reveal-d1" id="form" novalidate>
+      
       <div class="field">
         <label for="fin">Check-in</label>
         <input type="date" id="fin" name="checkin" required>
@@ -494,6 +594,8 @@ footer{background:var(--surface);padding:clamp(64px,8vw,104px) 0 40px}
   <a class="wa" href="https://wa.me/919845000000" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
 </nav>
 
+
+
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
   <img id="lbimg" alt="">
   <button class="lb__btn lb__close" type="button" id="lbclose" aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
@@ -546,7 +648,8 @@ footer{background:var(--surface);padding:clamp(64px,8vw,104px) 0 40px}
     li = (i + tiles.length) % tiles.length;
     var img = tiles[li].querySelector('img');
     lbimg.src = img.getAttribute('src'); lbimg.alt = img.alt;
-    $('lbcount').textContent = (li + 1) + ' / ' + tiles.length;
+    var cap = tiles[li].getAttribute('data-caption');
+    $('lbcount').textContent = (cap ? cap + '  \u00b7  ' : '') + (li + 1) + ' / ' + tiles.length;
   }
   function openL(i){
     lastFocus = document.activeElement;
@@ -575,6 +678,15 @@ footer{background:var(--surface);padding:clamp(64px,8vw,104px) 0 40px}
       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     }
   });
+
+  /* Floating WhatsApp: shown once the hero is passed, hidden over the booking section */
+  var fab = $('fab');
+  if (fab && 'IntersectionObserver' in window) {
+    var heroIn = true, enqIn = false;
+    var upd = function(){ fab.classList.toggle('is-on', !heroIn && !enqIn); };
+    new IntersectionObserver(function(es){ heroIn = es[0].isIntersecting; upd(); }, {threshold:0.1}).observe(document.querySelector('.hero'));
+    new IntersectionObserver(function(es){ enqIn = es[0].isIntersecting; upd(); }, {threshold:0.15}).observe($('enquire'));
+  } else if (fab) { fab.classList.add('is-on'); }
 
   /* Enquiry -> WhatsApp */
   var fin = $('fin'), fout = $('fout'), fname = $('fname'), fg = $('fguests'), ferr = $('ferr');

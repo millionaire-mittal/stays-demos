@@ -54,6 +54,25 @@ Each entry in `leads.json`:
 | `mood` | `"dark"` or `"light"` | `dark` = deep, moody page (forest, heritage). `light` = warm off-white page (beach, garden) |
 | `photos` | `6` | How many gallery images (`g1.jpg` to `g6.jpg`) |
 | `map_query` | optional | Overrides what the map shows, e.g. `"Mistwood Homestay, Madikeri"` |
+| `hosts` | optional `{heading, text, points, alt?}` | "Meet your hosts" section after the highlights. `points` is 1 to 4 short strings. Needs `img/hosts.jpg` |
+| `day` | optional `{heading, moments}` | "A day here" timeline. `moments` is 2 to 6 x `{time, text}`, e.g. `{"time": "Morning", "text": "..."}` |
+| `local` | optional `{note, heading?, cta?, wa_text?}` | "Local recommendations" section before the map, listing `nearby` with distances and a WhatsApp button. When present, the map section's "Around you" list is hidden so places aren't listed twice |
+
+| `help` | optional `{heading, points}` | "Host-guided help" cards just before Local recommendations. 1 to 6 short strings; icons are matched by keyword (walk, directions, food, transport...) |
+| `good_to_know` | optional `{points, heading?}` | "Good to know" list just before the booking section. 1 to 10 short strings. Only list things the owner has confirmed |
+| `booking` | optional `{heading, subtext, cta, wa_text, room_wa_text?}` | Turns the page WhatsApp-first: replaces the booking intro with the heading, subtext, a WhatsApp button (`cta`), Call and Get Directions buttons, and check-in/out times. It also adds a WhatsApp button in the hero, an "Ask about this room" link on each room, and a floating WhatsApp button on desktop (the mobile bar already covers phones). Every one of them pre-fills `wa_text`; `room_wa_text` can use `{room}` and `{name}` |
+| `photo_labels` | optional list | One label per gallery photo (e.g. `"Exterior"`), used as alt text and shown in the lightbox |
+
+A review can carry `"placeholder": true`. Its caption then reads "Review
+placeholder" instead of "Google review". Replace every placeholder with a real
+review before the demo is shown.
+
+Leave out any of `hosts`, `day`, `local`, `help`, `good_to_know` or `booking`
+and that section (or behaviour) doesn't appear. In any
+`heading`, wrap words in `*asterisks*` to set them in the accent italic, e.g.
+`"Life at *Green Haven*"`. For `local`, write `nearby` entries as
+`"Tea Museum — 3 km"` (or `"Tea Museum, 3 km"`) so the distance lines up on
+the right. `wa_text` is the message the WhatsApp button pre-fills.
 
 ### Images
 
@@ -63,6 +82,8 @@ Put them in `demos/<slug>/img/`:
   fills the screen, so pick the most atmospheric shot.
 - `g1.jpg` ... `gN.jpg`: required, where N is `photos`. A mix of landscape
   and portrait works best. The grid lays out any count without gaps.
+- `hosts.jpg`: required only when the lead has `hosts`. A warm photo of the
+  family; it shows as a 4:5 portrait on desktop and a square on phones.
 - `room1.jpg` ... : optional, one per room in order. A room without its own
   photo borrows a gallery photo.
 
