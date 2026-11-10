@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Skinthara | Skin, Hair, Laser, Aesthetics in Kalyan Nagar (Demo)</title>
+<meta name="description" content="Demo concept website for Skinthara, Kalyan Nagar, Bengaluru. Skin, hair, laser and aesthetics.">
+<meta property="og:title" content="Skinthara: demo website concept">
+<meta property="og:description" content="A More Radiant You, Always. Skin, hair, laser and aesthetics in Kalyan Nagar, Bengaluru.">
+<meta property="og:image" content="https://stays-demos.vercel.app/skinthara-bengaluru/img/og.jpg">
+<meta property="og:url" content="https://stays-demos.vercel.app/skinthara-bengaluru/">
+<meta name="theme-color" content="#62644c">
+<link rel="icon" href="img/lotus-olive.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f0e6; --surface:#fbf7f1; --olive:#62644c; --olive-deep:#4e503c; --cream:#f6f1e8;
+  --text:#252525; --muted:#5d5f55; --line:#ddd5c7;
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --wrap:1160px; --ease:cubic-bezier(.2,.7,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.eyebrow{font:500 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--olive)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1;margin:0}
+h2{font-size:clamp(34px,4.6vw,52px);color:var(--olive-deep)}
+h2 em,h1 em{font-style:italic}
+.rule{width:56px;height:1px;background:var(--olive);margin:22px 0 0}
+section{padding:clamp(72px,10vw,120px) 0}
+
+/* banner + header */
+.top{position:sticky;top:0;z-index:40}
+.demo-banner{background:#1f201a;color:#fff;text-align:center;font:500 13px/1.3 var(--sans);letter-spacing:.03em;padding:8px 16px}
+.header{background:color-mix(in srgb,var(--bg) 92%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.header .wrap{display:flex;align-items:center;gap:28px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--olive-deep)}
+.brand img{height:34px;width:auto}
+.brand span{font:500 26px/1 var(--serif);letter-spacing:.01em}
+.nav{display:flex;gap:24px;margin-left:auto}
+.nav a{font:400 14px/1 var(--sans);letter-spacing:.04em;text-decoration:none;color:var(--muted);transition:color .2s}
+.nav a:hover{color:var(--olive-deep)}
+.ig-link{display:inline-flex;align-items:center;gap:8px;font:500 14px/1 var(--sans);text-decoration:none;color:var(--olive-deep);border:1px solid var(--olive);border-radius:999px;padding:9px 16px;transition:background .2s,color .2s}
+.ig-link:hover{background:var(--olive);color:var(--cream)}
+.ig-link svg{width:16px;height:16px}
+@media (max-width:900px){.nav{display:none}.ig-link{margin-left:auto}}
+
+/* hero */
+.hero{background:var(--olive);color:var(--cream);text-align:center;padding:clamp(64px,10vw,120px) 0 clamp(72px,10vw,128px);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:18px;border:1px solid rgba(246,241,232,.22);pointer-events:none}
+.hero__logo{width:min(560px,82vw);margin:0 auto;opacity:0;transform:translateY(12px);animation:rise 1s var(--ease) .1s forwards}
+.hero h1{font-size:clamp(34px,5vw,58px);font-style:italic;margin:clamp(36px,5vw,52px) auto 0;max-width:16ch;opacity:0;animation:rise 1s var(--ease) .35s forwards}
+.hero__loc{margin:18px 0 0;font:500 12px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;opacity:.85}
+.btn{display:inline-flex;align-items:center;gap:10px;font:500 15px/1 var(--sans);letter-spacing:.03em;text-decoration:none;border-radius:999px;padding:16px 28px;transition:transform .25s var(--ease),background .25s,color .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:18px;height:18px}
+.btn--cream{background:var(--cream);color:var(--olive-deep);margin-top:36px}
+.btn--olive{background:var(--olive);color:var(--cream)}
+.btn--olive:hover{background:var(--olive-deep)}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* about */
+.about__grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(40px,7vw,96px);align-items:start}
+.lede{font:400 clamp(22px,2.4vw,28px)/1.45 var(--serif);color:var(--text);margin:28px 0 0}
+.quotes{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:18px}
+.quotes li{font:italic 400 clamp(22px,2.2vw,27px)/1.3 var(--serif);color:var(--olive-deep);padding-left:22px;border-left:1px solid var(--olive)}
+.approach{background:var(--surface);border:1px solid var(--line);padding:clamp(28px,4vw,44px)}
+.approach h3{font-size:30px;color:var(--olive-deep)}
+.approach ol{list-style:none;margin:24px 0 0;padding:0;counter-reset:s}
+.approach li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);font:400 22px/1.35 var(--serif)}
+.approach li::before{content:"0" counter(s);font:500 12px/1 var(--sans);letter-spacing:.14em;color:var(--olive)}
+.source{margin:18px 0 0;font-size:13px;color:var(--muted)}
+@media (max-width:860px){.about__grid{grid-template-columns:1fr}}
+
+/* services */
+.services{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.svc{display:grid;grid-template-columns:repeat(4,1fr);margin-top:48px;border-top:1px solid var(--line)}
+.svc article{padding:32px 28px 36px 0;border-right:1px solid var(--line)}
+.svc article+article{padding-left:28px}
+.svc article:last-child{border-right:0}
+.svc .num{font:500 12px/1 var(--sans);letter-spacing:.16em;color:var(--olive)}
+.svc h3{font-size:40px;color:var(--olive-deep);margin-top:22px}
+.svc p{margin:12px 0 0;color:var(--muted);font-size:15px}
+.svc-note{margin:32px 0 0;color:var(--muted);font-size:15px}
+.svc-note a{color:var(--olive-deep)}
+@media (max-width:860px){.svc{grid-template-columns:1fr 1fr}.svc article{padding:28px 20px 30px 0;border-bottom:1px solid var(--line)}.svc article:nth-child(2n){border-right:0;padding-left:20px}.svc article:nth-child(3){padding-left:0}}
+
+/* instagram */
+.feed__head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.group{margin-top:56px}
+.group__head{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.tag{display:inline-block;font:500 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:7px 11px;border-radius:999px;border:1px solid var(--olive);color:var(--olive-deep)}
+.tag--edu{background:var(--olive);color:var(--cream)}
+.group__note{margin:12px 0 0;color:var(--muted);font-size:15px;max-width:62ch}
+.grid{display:grid;gap:18px;margin-top:24px}
+.grid--3{grid-template-columns:repeat(3,1fr)}
+.tile{margin:0;cursor:zoom-in;background:none;border:0;padding:0;text-align:left;font:inherit;color:inherit}
+.tile img{width:100%;height:auto;border:1px solid var(--line);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.tile:hover img,.tile:focus-visible img{transform:translateY(-3px);box-shadow:0 14px 30px rgba(60,58,40,.14)}
+.tile:focus-visible{outline:2px solid var(--olive);outline-offset:4px}
+.tile span{display:block;margin-top:10px;font-size:14px;color:var(--muted)}
+@media (max-width:760px){.grid--3{grid-template-columns:1fr 1fr;gap:12px}}
+
+/* visit + enquire */
+.visit__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,96px)}
+address{font:400 clamp(22px,2.4vw,27px)/1.45 var(--serif);font-style:normal;margin-top:28px}
+.copy-btn{margin-top:22px;font:500 14px/1 var(--sans);background:none;border:1px solid var(--olive);color:var(--olive-deep);border-radius:999px;padding:11px 18px;cursor:pointer}
+.copy-btn:hover{background:var(--olive);color:var(--cream)}
+.enquire{background:var(--olive);color:var(--cream);padding:clamp(36px,5vw,56px)}
+.enquire h2{color:var(--cream)}
+.enquire p{margin:20px 0 0;opacity:.9}
+.enquire .btn{margin-top:28px}
+.enquire small{display:block;margin-top:18px;font-size:13px;opacity:.75}
+@media (max-width:860px){.visit__grid{grid-template-columns:1fr}}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:56px 0 64px;font-size:14px;color:var(--muted)}
+footer .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center}
+footer img{height:52px;width:auto}
+footer strong{display:block;font:500 28px/1 var(--serif);color:var(--olive-deep)}
+footer .cats{letter-spacing:.14em;text-transform:uppercase;font-size:11px;margin-top:8px}
+footer .credit{grid-column:1/-1;border-top:1px solid var(--line);padding-top:20px;font-size:13px}
+@media (max-width:640px){footer .wrap{grid-template-columns:1fr}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:60;background:rgba(24,24,18,.94);display:none;align-items:center;justify-content:center;padding:56px 64px;color:var(--cream)}
+.lb.open{display:flex}
+.lb figure{margin:0;display:flex;flex-direction:column;align-items:center;max-height:100%}
+.lb img{max-height:calc(100vh - 150px);max-width:100%;width:auto;object-fit:contain}
+.lb figcaption{margin-top:14px;font-size:14px;text-align:center;max-width:60ch;opacity:.9}
+.lb button{position:absolute;background:none;border:0;color:var(--cream);cursor:pointer;padding:12px;font:300 34px/1 var(--sans)}
+.lb .x{top:10px;right:14px}
+.lb .prev{left:8px;top:50%;transform:translateY(-50%)}
+.lb .next{right:8px;top:50%;transform:translateY(-50%)}
+@media (max-width:640px){.lb{padding:56px 12px}.lb .prev,.lb .next{top:auto;bottom:6px;transform:none}}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal,.hero__logo,.hero h1{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="demo-banner" role="note">This is a demo website only.</div>
+  <header class="header">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Skinthara, back to top"><img src="img/lotus-olive.png" alt="" width="363" height="331"><span>Skinthara</span></a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#about">About</a><a href="#services">Services</a><a href="#instagram">From Instagram</a><a href="#visit">Visit</a><a href="#enquire">Enquire</a>
+      </nav>
+      <a class="ig-link" href="https://www.instagram.com/skinthara/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>Instagram</a>
+    </div>
+  </header>
+</div>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <img class="hero__logo" src="img/logo-cream.png" width="965" height="575" alt="Skinthara: Skin, Hair, Laser, Aesthetics">
+      <h1>A More Radiant You, Always.</h1>
+      <p class="hero__loc">Kalyan Nagar, Bengaluru</p>
+      <a class="btn btn--cream" href="https://www.instagram.com/skinthara/" target="_blank" rel="noopener">Enquire on Instagram
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about__grid">
+      <div class="reveal">
+        <p class="eyebrow">About Skinthara</p>
+        <h2>A more personal <em>approach to skin.</em></h2>
+        <div class="rule"></div>
+        <p class="lede">Skinthara is a beauty, cosmetic and personal care business in Kalyan Nagar, Bengaluru, with a focus on skin, hair, laser and aesthetics.</p>
+        <ul class="quotes">
+          <li>Your skin isn’t a trend.</li>
+          <li>Because, every skin story is different.</li>
+          <li>With purpose, not guesswork.</li>
+        </ul>
+        <p class="source">Lines from Skinthara’s Instagram posts.</p>
+      </div>
+      <div class="approach reveal">
+        <p class="eyebrow">In Skinthara’s words</p>
+        <h3>“That’s why we take a <em>personalised approach.</em>”</h3>
+        <ol>
+          <li>Listen to your concern.</li>
+          <li>Understand the cause.</li>
+          <li>Assess your skin.</li>
+          <li>Recommend what’s right for you.</li>
+          <li>Support you through your journey.</li>
+        </ol>
+        <p class="source">From Skinthara’s Instagram series “Your skin isn’t a trend”.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">Service areas</p>
+        <h2>Skin <em>·</em> Hair <em>·</em> Laser <em>·</em> Aesthetics</h2>
+      </div>
+      <div class="svc reveal">
+        <article><span class="num">01</span><h3>Skin</h3><p>Ask Skinthara about skin services.</p></article>
+        <article><span class="num">02</span><h3>Hair</h3><p>Ask Skinthara about hair services.</p></article>
+        <article><span class="num">03</span><h3>Laser</h3><p>Ask Skinthara about laser services.</p></article>
+        <article><span class="num">04</span><h3>Aesthetics</h3><p>Ask Skinthara about aesthetic services.</p></article>
+      </div>
+      <p class="svc-note reveal">For specific treatments, consultation timings and pricing, <a href="https://www.instagram.com/skinthara/" target="_blank" rel="noopener">message Skinthara on Instagram</a>.</p>
+    </div>
+  </section>
+
+  <section id="instagram">
+    <div class="wrap">
+      <div class="feed__head reveal">
+        <div>
+          <p class="eyebrow">From Instagram</p>
+          <h2>Posts from <em>@skinthara</em></h2>
+        </div>
+        <a class="ig-link" href="https://www.instagram.com/skinthara/" target="_blank" rel="noopener">View on Instagram</a>
+      </div>
+
+      <div class="group reveal">
+        <div class="group__head"><span class="tag">Brand &amp; philosophy</span></div>
+        <div class="grid grid--3">
+          <button class="tile" data-i="0"><img src="img/post-brand.jpg" alt="Skinthara logo post: Skin, Hair, Laser, Aesthetics" loading="lazy" width="1080" height="1080"><span>The Skinthara brand</span></button>
+          <button class="tile" data-i="1"><img src="img/post-philosophy.jpg" alt="Philosophy post: Dermatology, without the intimidation." loading="lazy" width="1080" height="1080"><span>“Dermatology, without the intimidation.”</span></button>
+          <button class="tile" data-i="2"><img src="img/post-personalised.jpg" alt="Personalised care post: Because, every skin story is different." loading="lazy" width="1080" height="1080"><span>“Because, every skin story is different.”</span></button>
+        </div>
+      </div>
+
+      <div class="group reveal">
+        <div class="group__head"><span class="tag tag--edu">Skin notes · Educational</span></div>
+        <p class="group__note">“Your skin isn’t a trend”, an educational series from Skinthara’s Instagram. It shares general skin information and isn’t a list of treatments.</p>
+        <div class="grid grid--3">
+          <button class="tile" data-i="3"><img src="img/note-1.jpg" alt="Your skin isn't a trend. A more personal approach to skin." loading="lazy" width="1080" height="1350"><span>01 · Your skin isn’t a trend.</span></button>
+          <button class="tile" data-i="4"><img src="img/note-2.jpg" alt="Your skin changes. It reacts. It responds to its environment. Hormones, stress, climate, pollution, lifestyle. Your skin is constantly adapting." loading="lazy" width="1080" height="1350"><span>02 · Your skin changes.</span></button>
+          <button class="tile" data-i="5"><img src="img/note-3.jpg" alt="What works for someone else may not be what your skin needs. Different skin. Different concerns. Different reasons. Different solutions." loading="lazy" width="1080" height="1350"><span>03 · What works for someone else…</span></button>
+          <button class="tile" data-i="6"><img src="img/note-4.jpg" alt="Trends can start conversations. But, they aren't diagnoses. And, they aren't solutions." loading="lazy" width="1080" height="1350"><span>04 · Trends aren’t diagnoses.</span></button>
+          <button class="tile" data-i="7"><img src="img/note-5.jpg" alt="We believe in understanding your skin first. Because, when we understand the why, we can choose the what. With purpose, not guesswork." loading="lazy" width="1080" height="1350"><span>05 · Understanding your skin first.</span></button>
+          <button class="tile" data-i="8"><img src="img/note-6.jpg" alt="That's why we take a personalised approach. Listen to your concern. Understand the cause. Assess your skin. Recommend what's right for you. Support you through your journey." loading="lazy" width="1080" height="1350"><span>06 · A personalised approach.</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" class="services">
+    <div class="wrap visit__grid">
+      <div class="reveal">
+        <p class="eyebrow">Visit Skinthara</p>
+        <h2>Kalyan Nagar, <em>Bengaluru</em></h2>
+        <div class="rule"></div>
+        <address id="addr">No. 5M-411, Second Floor, 5th Main, North,<br>HBR Layout 2nd Block, Kalyan Nagar,<br>Bengaluru, Karnataka 560043</address>
+        <button class="copy-btn" type="button" id="copy">Copy address</button>
+      </div>
+      <div class="enquire reveal" id="enquire">
+        <h2>Enquire with <em>Skinthara</em></h2>
+        <p>Message Skinthara on Instagram for service information, consultation timings and pricing.</p>
+        <a class="btn btn--cream" href="https://www.instagram.com/skinthara/" target="_blank" rel="noopener">Message on Instagram
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <small>Sending a message doesn’t confirm an appointment. Skinthara will reply with availability.</small>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/lotus-olive.png" alt="" width="363" height="331">
+    <div>
+      <strong>Skinthara</strong>
+      <div class="cats">Skin · Hair · Laser · Aesthetics</div>
+      <div style="margin-top:8px">Kalyan Nagar, Bengaluru</div>
+    </div>
+    <a class="ig-link" href="https://www.instagram.com/skinthara/" target="_blank" rel="noopener">Instagram</a>
+    <div class="credit">Demo concept by Team Codzo. Not an official Skinthara website.</div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="x" type="button" aria-label="Close">&times;</button>
+  <button class="prev" type="button" aria-label="Previous">&#8249;</button>
+  <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  <button class="next" type="button" aria-label="Next">&#8250;</button>
+</div>
+
+<script>
+(function(){
+  var tiles=[].slice.call(document.querySelectorAll('.tile')),lb=document.getElementById('lb'),
+      im=document.getElementById('lb-img'),cap=document.getElementById('lb-cap'),cur=0,last=null;
+  function show(i){cur=(i+tiles.length)%tiles.length;var t=tiles[cur].querySelector('img');
+    im.src=t.src;im.alt=t.alt;cap.textContent=tiles[cur].querySelector('span').textContent+(cur>=3?' (educational post)':'');}
+  function open(i){last=document.activeElement;show(i);lb.classList.add('open');document.body.style.overflow='hidden';lb.querySelector('.x').focus();}
+  function close(){lb.classList.remove('open');document.body.style.overflow='';if(last)last.focus();}
+  tiles.forEach(function(t,i){t.addEventListener('click',function(){open(i)})});
+  lb.querySelector('.x').onclick=close;lb.querySelector('.prev').onclick=function(){show(cur-1)};lb.querySelector('.next').onclick=function(){show(cur+1)};
+  lb.addEventListener('click',function(e){if(e.target===lb)close()});
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1);});
+  var b=document.getElementById('copy');
+  b.addEventListener('click',function(){var t=document.getElementById('addr').innerText.replace(/\n/g,' ');
+    try{navigator.clipboard.writeText(t).then(function(){b.textContent='Address copied';setTimeout(function(){b.textContent='Copy address'},2000)})}catch(e){}});
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e)});}else{els.forEach(function(e){e.classList.add('in')});}
+})();
+</script>
+</body>
+</html>
