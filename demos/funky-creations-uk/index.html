@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Funky Creations | Handmade, personalised pieces (Demo)</title>
+<meta name="description" content="Demo website concept for Funky Creations: handmade, personalised pieces made in the UK. Commissions by DM.">
+<meta property="og:title" content="Funky Creations: Made With Love. Made for You.">
+<meta property="og:description" content="Handmade, personalised pieces for the people and moments that matter. Demo website concept.">
+<meta property="og:image" content="https://stays-demos.vercel.app/funky-creations-uk/img/og.jpg">
+<meta property="og:url" content="https://stays-demos.vercel.app/funky-creations-uk/">
+<meta name="theme-color" content="#fff8ef">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#ff2e93; --coral:#ff6b4a; --yellow:#ffc928; --teal:#16c2c2; --lime:#a4dd2b; --purple:#8b2fa0;
+  --ink:#1d1b22; --ink-2:#4a4752; --cream:#fff8ef; --cream-2:#fff1e0; --line:#f0e2cf;
+  --display:"Bricolage Grotesque",system-ui,sans-serif; --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --hand:"Caveat",cursive;
+  --r:26px; --ease:cubic-bezier(.2,.7,.2,1); --shadow:0 18px 40px -18px rgba(40,20,50,.35);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 17px/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.02;letter-spacing:-.02em;margin:0}
+h2{font-size:clamp(36px,5.4vw,64px)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font:700 13px/1 var(--body);letter-spacing:.14em;text-transform:uppercase}
+.kicker::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--pink)}
+.hand{font-family:var(--hand);font-weight:600}
+section{padding:clamp(72px,10vw,128px) 0;position:relative}
+.btn{display:inline-flex;align-items:center;gap:10px;font:700 16px/1 var(--body);text-decoration:none;border-radius:999px;padding:17px 26px;border:2px solid var(--ink);cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s}
+.btn--pink{background:var(--pink);color:#fff;border-color:var(--pink);box-shadow:4px 4px 0 var(--ink)}
+.btn--pink:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn--ghost{background:transparent;color:var(--ink)}
+.btn--ghost:hover{background:var(--ink);color:var(--cream)}
+.btn svg{width:18px;height:18px}
+
+/* banner + nav */
+.top{position:sticky;top:0;z-index:50}
+.demo-banner{background:var(--ink);color:#fff;text-align:center;font:500 13px/1.3 var(--body);letter-spacing:.02em;padding:8px 16px}
+.nav{background:color-mix(in srgb,var(--cream) 90%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:2px solid var(--ink)}
+.nav .wrap{display:flex;align-items:center;gap:28px;height:76px}
+.nav__logo img{height:50px;width:auto}
+.nav__links{display:flex;gap:26px;margin-left:auto}
+.nav__links a{font:500 15px/1 var(--body);text-decoration:none;position:relative}
+.nav__links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:3px;border-radius:3px;background:var(--pink);transform:scaleX(0);transition:transform .3s var(--ease)}
+.nav__links a:hover::after{transform:scaleX(1)}
+.nav .btn{padding:13px 20px;font-size:15px}
+.burger{display:none;margin-left:auto;background:none;border:2px solid var(--ink);border-radius:14px;width:46px;height:46px;cursor:pointer}
+.burger span{display:block;width:20px;height:2px;background:var(--ink);margin:4px auto;transition:transform .3s}
+@media (max-width:960px){
+  .nav__links,.nav .btn--nav{display:none}
+  .burger{display:block}
+  .nav.open .nav__links{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:100%;background:var(--cream);border-bottom:2px solid var(--ink);padding:20px;gap:18px;margin:0}
+  .nav.open .nav__links a{font-size:20px;font-family:var(--display);font-weight:600}
+}
+
+/* hero */
+.hero{padding:clamp(48px,7vw,96px) 0 clamp(64px,8vw,110px);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(48px,7.6vw,104px);margin-top:20px}
+.hero h1 .love{color:var(--pink);position:relative;white-space:nowrap}
+.hero h1 .love svg{position:absolute;left:-2%;bottom:-.16em;width:104%;height:.3em}
+.hero h1 .you{background:var(--yellow);border-radius:.18em;padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.hero p.sub{font-size:clamp(18px,1.6vw,21px);color:var(--ink-2);max-width:34ch;margin:26px 0 0}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.collage{position:relative;aspect-ratio:1/1.02;will-change:transform}
+.collage figure{position:absolute;margin:0;border-radius:var(--r);overflow:hidden;border:3px solid var(--ink);box-shadow:var(--shadow);background:#fff}
+.collage img{width:100%;height:100%;object-fit:cover}
+.c1{inset:0 16% 30% 0;transform:rotate(-3deg)}
+.c2{right:0;top:30%;width:46%;aspect-ratio:1;transform:rotate(4deg)}
+.c3{left:8%;bottom:0;width:40%;aspect-ratio:4/5;transform:rotate(3deg)}
+.c3 img{object-position:center 30%}
+.sticker{position:absolute;z-index:3;display:grid;place-items:center;border-radius:50%;border:3px solid var(--ink);font:800 15px/1.05 var(--display);text-align:center;box-shadow:4px 4px 0 var(--ink)}
+.sticker--a{width:118px;height:118px;right:4%;top:-2%;background:var(--lime);transform:rotate(12deg)}
+.sticker--b{left:48%;bottom:4%;width:96px;height:96px;background:var(--teal);color:#fff;transform:rotate(-10deg);font-size:28px}
+.spin{animation:spin 18s linear infinite}
+@keyframes spin{to{transform:rotate(372deg)}}
+.blob{position:absolute;border-radius:50%;filter:blur(2px);z-index:-1}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.collage{max-width:520px;margin:12px auto 0;width:100%}.sticker--a{width:96px;height:96px;font-size:13px}}
+
+/* marquee */
+.strip{background:var(--ink);color:var(--cream);border-block:2px solid var(--ink);overflow:hidden;padding:20px 0;transform:rotate(-1.2deg);margin:0 -10px}
+.strip__track{display:flex;gap:44px;width:max-content;animation:marq 32s linear infinite}
+.strip span{font:800 clamp(20px,2.4vw,28px)/1 var(--display);white-space:nowrap;display:inline-flex;align-items:center;gap:44px}
+.strip span::after{content:"✦";font-size:.8em}
+.strip span:nth-child(6n+1)::after{color:var(--pink)}.strip span:nth-child(6n+2)::after{color:var(--yellow)}.strip span:nth-child(6n+3)::after{color:var(--teal)}
+.strip span:nth-child(6n+4)::after{color:var(--lime)}.strip span:nth-child(6n+5)::after{color:var(--coral)}.strip span:nth-child(6n)::after{color:#fff}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* about */
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,88px);align-items:center}
+.about__media{position:relative;display:grid;grid-template-columns:1.3fr 1fr;gap:16px}
+.ph{position:relative;border-radius:var(--r);border:3px dashed var(--ink);display:grid;place-items:center;text-align:center;padding:18px;font:700 13px/1.35 var(--body);letter-spacing:.06em;color:var(--ink);min-height:200px;overflow:hidden}
+.ph b{display:block;font:800 15px/1.1 var(--display);letter-spacing:.02em;margin-bottom:6px}
+.ph small{font-weight:500;letter-spacing:0;color:var(--ink-2)}
+.ph--pink{background:repeating-linear-gradient(-45deg,#ffd6ea 0 14px,#ffe6f2 14px 28px)}
+.ph--yellow{background:repeating-linear-gradient(-45deg,#ffeaa6 0 14px,#fff2c6 14px 28px)}
+.ph--teal{background:repeating-linear-gradient(-45deg,#c3f1f1 0 14px,#dcf8f8 14px 28px)}
+.ph--lime{background:repeating-linear-gradient(-45deg,#e2f5b8 0 14px,#edf9d2 14px 28px)}
+.ph--coral{background:repeating-linear-gradient(-45deg,#ffd4c9 0 14px,#ffe4dc 14px 28px)}
+.about__media .ph:first-child{grid-row:span 2;min-height:420px}
+.am{margin:0;border:3px solid var(--ink);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);background:#fff}
+.am img{width:100%;height:100%;object-fit:cover}
+.am--tall{grid-row:span 2;min-height:420px;transform:rotate(-2deg)}
+.am:not(.am--tall){aspect-ratio:1;transform:rotate(-1.5deg)}
+@media (max-width:860px){.am--tall{min-height:300px}}
+.brandcard{background:#fff;border:3px solid var(--ink);border-radius:var(--r);display:grid;place-items:center;padding:22px;box-shadow:var(--shadow);transform:rotate(2deg)}
+.about h2 em{font-style:normal;color:var(--teal)}
+.about p{color:var(--ink-2);margin:24px 0 0;font-size:18px}
+.about blockquote{margin:28px 0 0;padding:22px 26px;background:var(--yellow);border:2px solid var(--ink);border-radius:20px;font:600 clamp(26px,2.6vw,32px)/1.2 var(--hand);color:var(--ink);transform:rotate(-1deg)}
+@media (max-width:860px){.about .wrap{grid-template-columns:1fr}.about__media .ph:first-child{min-height:300px}}
+
+/* creations */
+.creations{background:var(--cream-2);border-block:2px solid var(--ink)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:48px}
+.head p{max-width:40ch;color:var(--ink-2);margin:0}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{border:2px solid var(--ink);border-radius:var(--r);padding:28px 24px 30px;min-height:300px;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.card:hover{transform:translateY(-6px) rotate(-1deg);box-shadow:6px 8px 0 var(--ink)}
+.card .ico{width:58px;height:58px;border-radius:18px;background:#fff;border:2px solid var(--ink);display:grid;place-items:center}
+.card .ico svg{width:30px;height:30px}
+.card h3{font-size:28px;margin-top:auto;padding-top:40px}
+.card p{margin:10px 0 0;font-size:15px}
+.card:nth-child(1){background:var(--pink);color:#fff}.card:nth-child(2){background:var(--yellow)}
+.card:nth-child(3){background:var(--teal);color:#fff}.card:nth-child(4){background:var(--lime)}
+.featured{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.featured figure{margin:0;border:2px solid var(--ink);border-radius:var(--r);overflow:hidden;background:#fff;position:relative}
+.featured img{width:100%;aspect-ratio:4/3.3;object-fit:cover;transition:transform .6s var(--ease)}
+.featured figure:hover img{transform:scale(1.04)}
+.featured figcaption{padding:14px 18px;font:700 15px/1.3 var(--body);border-top:2px solid var(--ink)}
+.featured figcaption span{display:block;font-weight:400;color:var(--ink-2);font-size:13px}
+@media (max-width:960px){.cards{grid-template-columns:1fr 1fr}.featured{grid-template-columns:1fr 1fr}.featured figure:last-child{grid-column:span 2}}
+@media (max-width:560px){.cards{grid-template-columns:1fr}.card{min-height:220px}.featured{grid-template-columns:1fr}.featured figure:last-child{grid-column:auto}}
+
+/* process */
+.process .wrap{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(36px,6vw,88px);align-items:start}
+.process__img{position:sticky;top:150px;border:3px solid var(--ink);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);transform:rotate(-2deg)}
+.process__img img{width:100%;aspect-ratio:1;object-fit:cover}
+.process__img .tagline{position:absolute;left:16px;bottom:16px;background:var(--cream);border:2px solid var(--ink);border-radius:999px;padding:8px 14px;font:600 22px/1 var(--hand)}
+.steps{list-style:none;margin:40px 0 0;padding:0;position:relative}
+.steps::before{content:"";position:absolute;left:31px;top:20px;bottom:20px;border-left:3px dotted var(--ink)}
+.steps li{display:grid;grid-template-columns:64px 1fr;gap:20px;align-items:center;padding:14px 0;position:relative}
+.steps .n{width:64px;height:64px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font:800 24px/1 var(--display);position:relative;z-index:1;transition:transform .3s var(--ease)}
+.steps li:hover .n{transform:scale(1.1) rotate(-8deg)}
+.steps li:nth-child(1) .n{background:var(--pink);color:#fff}.steps li:nth-child(2) .n{background:var(--yellow)}.steps li:nth-child(3) .n{background:var(--teal);color:#fff}
+.steps li:nth-child(4) .n{background:var(--lime)}.steps li:nth-child(5) .n{background:var(--coral);color:#fff}
+.steps h3{font-size:clamp(22px,2.2vw,28px)}
+.process .btn{margin-top:34px}
+@media (max-width:860px){.process .wrap{grid-template-columns:1fr}.process__img{position:relative;top:0;max-width:440px}}
+
+/* why */
+.why{background:var(--ink);color:var(--cream)}
+.why h2 .hl{color:var(--yellow)}
+.why__grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:48px}
+.why__grid div{border:2px solid rgba(255,248,239,.22);border-radius:var(--r);padding:26px 20px 28px;transition:border-color .3s,transform .3s var(--ease)}
+.why__grid div:hover{border-color:var(--pink);transform:translateY(-4px)}
+.why__grid b{display:block;font:800 44px/1 var(--display)}
+.why__grid div:nth-child(1) b{color:var(--pink)}.why__grid div:nth-child(2) b{color:var(--yellow)}.why__grid div:nth-child(3) b{color:var(--teal)}
+.why__grid div:nth-child(4) b{color:var(--lime)}.why__grid div:nth-child(5) b{color:var(--coral)}
+.why__grid h3{font-size:22px;margin-top:28px;font-weight:600}
+@media (max-width:960px){.why__grid{grid-template-columns:1fr 1fr}.why__grid div:last-child{grid-column:span 2}}
+@media (max-width:520px){.why__grid{grid-template-columns:1fr}.why__grid div:last-child{grid-column:auto}}
+
+/* gallery */
+.masonry{columns:3 280px;column-gap:18px}
+.masonry > *{break-inside:avoid;margin:0 0 18px}
+.g-img{display:block;width:100%;padding:0;border:2px solid var(--ink);border-radius:var(--r);overflow:hidden;cursor:zoom-in;background:#fff;position:relative}
+.g-img img{width:100%;height:auto;transition:transform .6s var(--ease)}
+.g-img:hover img{transform:scale(1.04)}
+.g-img span{position:absolute;left:12px;bottom:12px;background:var(--cream);border:2px solid var(--ink);border-radius:999px;padding:6px 12px;font:700 13px/1 var(--body);opacity:0;transform:translateY(6px);transition:.3s var(--ease)}
+.g-img:hover span,.g-img:focus-visible span{opacity:1;transform:none}
+.masonry .ph{min-height:0}
+.ph.sq{aspect-ratio:1}.ph.pt{aspect-ratio:4/5}.ph.ls{aspect-ratio:4/3}
+
+/* contact */
+.contact__box{border:3px solid var(--ink);border-radius:36px;overflow:hidden;display:grid;grid-template-columns:1fr 1.15fr;box-shadow:8px 8px 0 var(--ink)}
+.contact__cta{padding:clamp(32px,5vw,56px);color:#fff;position:relative;background:
+  radial-gradient(circle at 15% 20%,var(--yellow) 0 12%,transparent 12.5%),
+  radial-gradient(circle at 85% 85%,var(--teal) 0 18%,transparent 18.5%),
+  radial-gradient(circle at 90% 10%,var(--lime) 0 7%,transparent 7.5%),
+  linear-gradient(135deg,var(--pink),var(--coral) 55%,var(--purple))}
+.contact__cta h2{font-size:clamp(36px,4.6vw,56px);text-shadow:0 2px 0 rgba(0,0,0,.08)}
+.contact__cta p{font-size:18px;margin:20px 0 0;max-width:34ch}
+.contact__cta .btn{margin-top:30px;background:#fff;color:var(--ink);border-color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.contact__cta .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.socials a{font:700 14px/1 var(--body);text-decoration:none;background:rgba(255,255,255,.18);border:2px solid #fff;border-radius:999px;padding:10px 16px;transition:background .2s}
+.socials a:hover{background:rgba(255,255,255,.34)}
+.form{background:#fff;padding:clamp(28px,4vw,48px)}
+.form h3{font-size:28px}
+.form .note{font-size:14px;color:var(--ink-2);margin:8px 0 22px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+label{font:700 13px/1.2 var(--body)}
+label i{font-style:normal;font-weight:400;color:var(--ink-2)}
+input,select,textarea{font:400 16px/1.4 var(--body);color:var(--ink);background:var(--cream);border:2px solid var(--ink);border-radius:14px;padding:12px 14px;width:100%;transition:box-shadow .2s,border-color .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--pink);box-shadow:0 0 0 4px rgba(255,46,147,.18)}
+textarea{min-height:120px;resize:vertical}
+input[type=file]{padding:10px;background:var(--cream-2)}
+.err{color:#c2185b;font-size:13px;min-height:1em}
+.form .btn{margin-top:22px;width:100%;justify-content:center}
+.success{display:none;text-align:center;padding:40px 10px}
+.success .big{font:800 40px/1 var(--display);color:var(--pink)}
+.success p{color:var(--ink-2)}
+.form.done form{display:none}.form.done .success{display:block}
+@media (max-width:900px){.contact__box{grid-template-columns:1fr}}
+@media (max-width:520px){.fgrid{grid-template-columns:1fr}}
+
+/* footer */
+footer{padding:64px 0 48px}
+footer .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:28px 40px;align-items:center}
+footer img{height:70px;width:auto}
+footer .lines{font-size:15px;color:var(--ink-2)}
+footer .lines strong{display:block;font:800 22px/1.2 var(--display);color:var(--ink)}
+footer .links{display:flex;gap:14px;flex-wrap:wrap;font:700 14px/1 var(--body)}
+footer .links a{text-decoration:none;border-bottom:2px solid var(--pink);padding-bottom:3px}
+footer .small{grid-column:1/-1;border-top:2px solid var(--line);padding-top:20px;font-size:13px;color:var(--ink-2)}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(29,27,34,.94);display:none;align-items:center;justify-content:center;padding:56px 64px}
+.lb.open{display:flex}
+.lb figure{margin:0;text-align:center;color:var(--cream)}
+.lb img{max-height:calc(100vh - 150px);max-width:100%;width:auto;border-radius:18px}
+.lb figcaption{margin-top:14px;font-size:15px}
+.lb button{position:absolute;background:var(--cream);border:2px solid var(--ink);border-radius:50%;width:48px;height:48px;font:700 22px/1 var(--body);cursor:pointer;color:var(--ink)}
+.lb .x{top:16px;right:16px}.lb .prev{left:14px;top:50%}.lb .next{right:14px;top:50%}
+@media (max-width:640px){.lb{padding:70px 12px}.lb .prev,.lb .next{top:auto;bottom:14px}}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="demo-banner" role="note">This is a demo website only.</div>
+  <nav class="nav" id="nav" aria-label="Main">
+    <div class="wrap">
+      <a class="nav__logo" href="#top" aria-label="Funky Creations, back to top"><img src="img/logo.png" alt="Funky Creations &amp; Memories" width="873" height="455"></a>
+      <div class="nav__links" id="links">
+        <a href="#about">About</a><a href="#creations">Creations</a><a href="#commissions">Commissions</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+      </div>
+      <a class="btn btn--pink btn--nav" href="#contact">Commission a Piece</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="links"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</div>
+
+<main id="top">
+  <!-- HERO_IMAGE: collage of real product photos; swap any image src to change -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="kicker reveal">Handmade in the UK</span>
+        <h1 class="reveal">Made With <span class="love">Love.<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2 14 C 40 4, 80 18, 120 9 S 180 6, 198 12" fill="none" stroke="#ffc928" stroke-width="6" stroke-linecap="round"/></svg></span><br>Made for <span class="you">You.</span></h1>
+        <p class="sub reveal">Funky Creations creates handmade, personalised pieces for the people and moments that matter.</p>
+        <div class="ctas reveal">
+          <a class="btn btn--pink" href="#contact">Commission a Piece <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn--ghost" href="#creations">Explore Creations</a>
+        </div>
+      </div>
+      <div class="collage" id="collage" data-placeholder="HERO_IMAGE">
+        <figure class="c1"><img src="img/baubles.jpg" alt="Personalised penguin Christmas decorations with children's names" width="1400" height="1173" fetchpriority="high"></figure>
+        <figure class="c2"><img src="img/hat-pink.jpg" alt="Pink pom-pom hat with a velvet bow personalised with the name Lola" width="1191" height="1127"></figure>
+        <figure class="c3"><img src="img/steamers.jpg" alt="Packaged menthol shower steamers" width="1120" height="1400"></figure>
+        <div class="sticker sticker--a"><span>Made<br>with<br>love ♥</span></div>
+        <div class="sticker sticker--b"><span class="spin" style="display:inline-block">✦</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-label="Handmade With Love, Personalised Commissions, Made in the UK, DM to Order, Unique Gifts, Small-Batch Creations">
+    <div class="strip__track" aria-hidden="true">
+      <span>Handmade With Love</span><span>Personalised Commissions</span><span>Made in the UK</span><span>DM to Order</span><span>Unique Gifts</span><span>Small-Batch Creations</span>
+      <span>Handmade With Love</span><span>Personalised Commissions</span><span>Made in the UK</span><span>DM to Order</span><span>Unique Gifts</span><span>Small-Batch Creations</span>
+    </div>
+  </div>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about__media reveal">
+        <figure class="am am--tall"><img src="img/coaster.jpg" alt="Glitter keepsake engraved: Because someone we love is in Heaven, there is a little bit of Heaven in our home" loading="lazy" width="1120" height="1400"></figure>
+        <div class="brandcard" data-placeholder="BRAND_DETAILS"><img src="img/logo.png" alt="Funky Creations &amp; Memories logo" width="873" height="455"></div>
+        <figure class="am"><img src="img/keyring.jpg" alt="Purple glitter keyring personalised with the name Bella on a Funky Creations backing card" loading="lazy" width="1170" height="1169"></figure>
+      </div>
+      <div class="reveal">
+        <span class="kicker">About</span>
+        <h2 style="margin-top:18px">Creativity, Made <em>Personal</em></h2>
+        <p>Funky Creations is a handmade creative business built around personalised, made-to-order pieces. From gifts and keepsakes to custom creations, every piece is designed to feel personal, playful, and thoughtfully made.</p>
+        <blockquote>“Whether it’s a gift for someone special or a little something to brighten your own space, Funky Creations turns ideas into pieces made with care.”</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="creations" id="creations">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><span class="kicker">Creations</span><h2 style="margin-top:18px">Creations Made for<br>Every Moment</h2></div>
+        <p>Every piece is made to order. Tell us who it’s for and what it should say, and we’ll make it yours.</p>
+      </div>
+      <div class="cards reveal">
+        <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#1d1b22" stroke-width="1.8"><rect x="3.5" y="9" width="17" height="11.5" rx="2"/><path d="M3.5 13h17M12 9v11.5M12 9c-1.5-3.5-6-4-6-1.5S10 9 12 9zm0 0c1.5-3.5 6-4 6-1.5S14 9 12 9z"/></svg></div><h3>Personalised Gifts</h3><p>Names, messages and little details that make a gift theirs.</p></article>
+        <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#1d1b22" stroke-width="1.8"><path d="M12 20.5s-7.5-4.6-7.5-10A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7.5 2.5c0 5.4-7.5 10-7.5 10z"/></svg></div><h3>Keepsakes</h3><p>Pieces made to hold on to a memory, a moment or a person.</p></article>
+        <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#1d1b22" stroke-width="1.8"><path d="M4 20l4.5-1 10-10a2.1 2.1 0 0 0-3-3l-10 10L4 20z"/><path d="M14 7.5l2.5 2.5"/></svg></div><h3>Custom Commissions</h3><p>Got an idea? Let’s talk it through and make it together.</p></article>
+        <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#1d1b22" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2 2M16.7 16.7l2 2M5.3 18.7l2-2M16.7 7.3l2-2"/></svg></div><h3>Everyday Joy</h3><p>Small, colourful things to brighten your own space.</p></article>
+      </div>
+      <div class="featured reveal">
+        <figure data-placeholder="PRODUCT_HERO"><img src="img/hat-pink.jpg" alt="Pink pom-pom hat personalised with the name Lola" loading="lazy" width="1191" height="1127"><figcaption>Personalised pom-pom hat<span>Velvet bow with a name</span></figcaption></figure>
+        <figure><img src="img/baubles.jpg" alt="Personalised penguin Christmas decorations" loading="lazy" width="1400" height="1173"><figcaption>Personalised Christmas decorations<span>Initial and name on each one</span></figcaption></figure>
+        <figure data-placeholder="GIFT_MOMENT"><img src="img/steamers.jpg" alt="Packaged menthol shower steamers" loading="lazy" width="1120" height="1400" style="object-position:center 35%"><figcaption>Menthol shower steamers<span>Wrapped and labelled</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="commissions">
+    <div class="wrap">
+      <div class="process__img reveal" data-placeholder="PERSONALISATION">
+        <img src="img/hat-grey.jpg" alt="Grey pom-pom hat with a velvet bow personalised with the name Keira" loading="lazy" width="1200" height="1134">
+        <span class="tagline">your name here ✿</span>
+      </div>
+      <div>
+        <span class="kicker reveal">Commissions</span>
+        <h2 class="reveal" style="margin-top:18px">How a Commission Works</h2>
+        <ol class="steps">
+          <li class="reveal"><span class="n">1</span><h3>Send a DM</h3></li>
+          <li class="reveal"><span class="n">2</span><h3>Discuss the details</h3></li>
+          <li class="reveal"><span class="n">3</span><h3>Approve the concept</h3></li>
+          <li class="reveal"><span class="n">4</span><h3>Made with love</h3></li>
+          <li class="reveal"><span class="n">5</span><h3>Receive your creation</h3></li>
+        </ol>
+        <a class="btn btn--pink reveal" href="#contact">Start Your Commission <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="wrap">
+      <span class="kicker reveal" style="color:var(--cream)">Why Funky Creations</span>
+      <h2 class="reveal" style="margin-top:18px">Made by hand.<br><span class="hl">Made to mean something.</span></h2>
+      <div class="why__grid reveal">
+        <div><b>01</b><h3>Handmade with care</h3></div>
+        <div><b>02</b><h3>Personalised by design</h3></div>
+        <div><b>03</b><h3>One-of-one feel</h3></div>
+        <div><b>04</b><h3>Direct and personal</h3></div>
+        <div><b>05</b><h3>Creative and colourful</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><span class="kicker">Gallery</span><h2 style="margin-top:18px">Recent Creations</h2></div>
+        <a class="btn btn--ghost" href="https://www.instagram.com/funkycreationsuk/" target="_blank" rel="noopener">More on Instagram</a>
+      </div>
+      <div class="masonry reveal">
+        <button class="g-img" data-placeholder="GALLERY_1"><img src="img/hat-pink.jpg" alt="Pink pom-pom hat personalised with the name Lola" loading="lazy" width="1191" height="1127"><span>Personalised pom-pom hat</span></button>
+        <button class="g-img" data-placeholder="GALLERY_2"><img src="img/keyring.jpg" alt="Purple glitter keyring personalised with the name Bella" loading="lazy" width="1170" height="1169"><span>Personalised keyring</span></button>
+        <button class="g-img" data-placeholder="GALLERY_3"><img src="img/steamers.jpg" alt="Packaged menthol shower steamers" loading="lazy" width="1120" height="1400"><span>Menthol shower steamers</span></button>
+        <button class="g-img" data-placeholder="GALLERY_4"><img src="img/pendant.jpg" alt="Silver angel wing pendant" loading="lazy" width="320" height="320"><span>Angel wing pendant</span></button>
+        <button class="g-img" data-placeholder="GALLERY_5"><img src="img/baubles.jpg" alt="Personalised penguin Christmas decorations" loading="lazy" width="1400" height="1173"><span>Personalised Christmas decorations</span></button>
+        <button class="g-img" data-placeholder="GALLERY_6"><img src="img/pyjamas.jpg" alt="Striped pink pyjamas printed: When I wake up I will be 1, Lola" loading="lazy" width="1081" height="1079"><span>Personalised birthday pyjamas</span></button>
+        <button class="g-img" data-placeholder="GALLERY_7"><img src="img/hat-grey.jpg" alt="Grey pom-pom hat personalised with the name Keira" loading="lazy" width="1200" height="1134"><span>Personalised pom-pom hat</span></button>
+        <button class="g-img" data-placeholder="GALLERY_8"><img src="img/labels.jpg" alt="Christmas gifts wrapped with North Pole Express Mail labels" loading="lazy" width="1307" height="1198"><span>North Pole gift labels</span></button>
+        <button class="g-img" data-placeholder="GALLERY_9"><img src="img/coaster.jpg" alt="Glitter keepsake engraved: Heaven, Our Home" loading="lazy" width="1120" height="1400"><span>Memorial keepsake</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:0">
+    <div class="wrap">
+      <div class="contact__box reveal">
+        <div class="contact__cta" data-placeholder="CTA_BACKGROUND">
+          <span class="kicker" style="color:#fff">Contact</span>
+          <h2 style="margin-top:18px">Let’s Create Something Special</h2>
+          <p>Have an idea in mind? Send a message to discuss a personalised commission, gift, or custom creation.</p>
+          <a class="btn" href="https://www.instagram.com/funkycreationsuk/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>DM on Instagram</a>
+          <div class="socials">
+            <a href="https://linktr.ee/funkycreationsuk" target="_blank" rel="noopener">TikTok</a>
+            <a href="https://linktr.ee/funkycreationsuk" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://linktr.ee/funkycreationsuk" target="_blank" rel="noopener">Threads</a>
+          </div>
+        </div>
+        <div class="form" id="formbox">
+          <form id="form" novalidate>
+            <h3>Request a Commission</h3>
+            <p class="note">Tell us about your idea and we’ll be in touch.</p>
+            <div class="fgrid">
+              <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required><span class="err"></span></div>
+              <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required><span class="err"></span></div>
+              <div class="field"><label for="f-ig">Instagram handle <i>(optional)</i></label><input id="f-ig" name="instagram" placeholder="@"></div>
+              <div class="field"><label for="f-type">Type of creation</label>
+                <select id="f-type" name="type" required><option value="">Choose one</option><option>Personalised gift</option><option>Keepsake</option><option>Custom commission</option><option>Everyday joy</option><option>Not sure yet</option></select><span class="err"></span></div>
+              <div class="field"><label for="f-occ">Occasion</label><input id="f-occ" name="occasion" placeholder="Birthday, Christmas, new baby…"></div>
+              <div class="field"><label for="f-budget">Budget range <i>(optional)</i></label><input id="f-budget" name="budget" placeholder="e.g. £20–£40"></div>
+              <div class="field"><label for="f-date">Deadline / date needed</label><input id="f-date" name="deadline" type="date"><span class="err"></span></div>
+              <div class="field"><label for="f-file">Reference image <i>(optional)</i></label><input id="f-file" name="reference" type="file" accept="image/*"></div>
+              <div class="field full"><label for="f-msg">Message / idea description</label><textarea id="f-msg" name="message" required placeholder="Names, colours, wording, anything that inspires you…"></textarea><span class="err"></span></div>
+            </div>
+            <button class="btn btn--pink" type="submit">Request a Commission</button>
+          </form>
+          <div class="success" role="status" aria-live="polite">
+            <div class="big">Thank you! ♥</div>
+            <p>Your commission request is ready.<br>This is a demo website, so nothing was sent. To get started for real, <a href="https://www.instagram.com/funkycreationsuk/" target="_blank" rel="noopener">DM @funkycreationsuk on Instagram</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.png" alt="Funky Creations &amp; Memories" width="873" height="455" data-placeholder="BRAND_DETAILS">
+    <div class="lines"><strong>Funky Creations</strong>Handmade with love · Commissions available, DM to order</div>
+    <div class="links">
+      <a href="https://www.instagram.com/funkycreationsuk/" target="_blank" rel="noopener">Instagram: @funkycreationsuk</a>
+      <a href="https://linktr.ee/funkycreationsuk" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://linktr.ee/funkycreationsuk" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://linktr.ee/funkycreationsuk" target="_blank" rel="noopener">Threads</a>
+    </div>
+    <div class="small">Demo website concept for Funky Creations. Final products, pricing, delivery, and policies to be confirmed by the business.</div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="x" type="button" aria-label="Close">✕</button>
+  <button class="prev" type="button" aria-label="Previous">‹</button>
+  <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  <button class="next" type="button" aria-label="Next">›</button>
+</div>
+
+<script>
+(function(){
+  // mobile nav
+  var nav=document.getElementById('nav'),burger=document.getElementById('burger');
+  burger.addEventListener('click',function(){var o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+  document.querySelectorAll('#links a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');burger.setAttribute('aria-expanded','false')})});
+
+  // reveal
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});els.forEach(function(e){io.observe(e)})}
+  else els.forEach(function(e){e.classList.add('in')});
+
+  // gentle parallax on hero collage
+  var col=document.getElementById('collage'),reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){var tick=false;window.addEventListener('scroll',function(){if(tick)return;tick=true;requestAnimationFrame(function(){var y=Math.min(window.scrollY,800);col.style.transform='translateY('+(y*-0.06)+'px)';tick=false})},{passive:true})}
+
+  // lightbox
+  var tiles=[].slice.call(document.querySelectorAll('.g-img')),lb=document.getElementById('lb'),im=document.getElementById('lb-img'),cap=document.getElementById('lb-cap'),cur=0,last=null;
+  function show(i){cur=(i+tiles.length)%tiles.length;var t=tiles[cur].querySelector('img');im.src=t.src;im.alt=t.alt;cap.textContent=tiles[cur].querySelector('span').textContent}
+  function open(i){last=document.activeElement;show(i);lb.classList.add('open');document.body.style.overflow='hidden';lb.querySelector('.x').focus()}
+  function close(){lb.classList.remove('open');document.body.style.overflow='';if(last)last.focus()}
+  tiles.forEach(function(t,i){t.addEventListener('click',function(){open(i)})});
+  lb.querySelector('.x').onclick=close;lb.querySelector('.prev').onclick=function(){show(cur-1)};lb.querySelector('.next').onclick=function(){show(cur+1)};
+  lb.addEventListener('click',function(e){if(e.target===lb)close()});
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+
+  // form (demo only: nothing is sent)
+  var form=document.getElementById('form'),box=document.getElementById('formbox');
+  var today=new Date();today.setHours(0,0,0,0);
+  document.getElementById('f-date').min=today.toISOString().slice(0,10);
+  function setErr(el,msg){var e=el.parentNode.querySelector('.err');if(e)e.textContent=msg||''}
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();var ok=true;
+    [['f-name','Please add your name'],['f-type','Please choose a type'],['f-msg','Tell us a little about your idea']].forEach(function(p){var el=document.getElementById(p[0]);var bad=!el.value.trim();setErr(el,bad?p[1]:'');if(bad)ok=false});
+    var em=document.getElementById('f-email');var badE=!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value.trim());setErr(em,badE?'Please add a valid email':'');if(badE)ok=false;
+    var d=document.getElementById('f-date');if(d.value&&new Date(d.value)<today){setErr(d,'Please choose a future date');ok=false}else setErr(d,'');
+    if(!ok){var f=form.querySelector('.err:not(:empty)');if(f)f.parentNode.querySelector('input,select,textarea').focus();return}
+    box.classList.add('done');
+  });
+})();
+</script>
+</body>
+</html>
