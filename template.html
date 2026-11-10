@@ -380,8 +380,8 @@ footer{background:var(--surface);padding:clamp(64px,8vw,104px) 0 40px}
     <div class="hero__row">
       <a class="btn" href="#enquire">Check availability</a>
       {{#if booking}}<a class="btn btn--ghost" href="{{wa_main_href}}" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>{{booking.cta}}</a>{{/if}}
-      <a class="badge" href="{{maps_link}}" target="_blank" rel="noopener" aria-label="Rated {{rating}} out of 5 from {{review_count}} Google reviews">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>{{rating}} <span>&middot; {{review_count}} Google reviews</span>
+      <a class="badge" href="{{reviews_link}}" target="_blank" rel="noopener" aria-label="Rated {{rating}} out of 5 from {{review_count}} {{review_source}} reviews">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>{{rating}} <span>&middot; {{review_count}} {{review_source}} reviews</span>
       </a>
     </div>
   </div>
@@ -503,7 +503,7 @@ footer{background:var(--surface);padding:clamp(64px,8vw,104px) 0 40px}
       <span class="count" id="qcount">1 / {{reviews_count}}</span>
       <button class="arrow" type="button" id="qnext" aria-label="Next review"><svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></button>
     </div>
-    <p class="reviews__summary">Rated {{rating}} from <a href="{{maps_link}}" target="_blank" rel="noopener">{{review_count}} reviews on Google</a></p>
+    <p class="reviews__summary">Rated {{rating}} from <a href="{{reviews_link}}" target="_blank" rel="noopener">{{review_count}} reviews on {{review_source}}</a></p>
   </div>
 </section>
 
@@ -658,7 +658,7 @@ footer{background:var(--surface);padding:clamp(64px,8vw,104px) 0 40px}
     </div>
     <div class="demo">
       <span>Demo site, built as a private preview for {{name}}.</span>
-      <span>Reviews from Google.</span>
+      <span>Reviews from {{review_source}}.</span>
     </div>
   </div>
 </footer>

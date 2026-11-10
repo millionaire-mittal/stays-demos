@@ -61,6 +61,8 @@ Each entry in `leads.json`:
 | `help` | optional `{heading, points}` | "Host-guided help" cards just before Local recommendations. 1 to 6 short strings; icons are matched by keyword (walk, directions, food, transport...) |
 | `good_to_know` | optional `{points, heading?}` | "Good to know" list just before the booking section. 1 to 10 short strings. Only list things the owner has confirmed |
 | `booking` | optional `{heading, subtext, cta, wa_text, room_wa_text?}` | Turns the page WhatsApp-first: replaces the booking intro with the heading, subtext, a WhatsApp button (`cta`), Call and Get Directions buttons, and check-in/out times. It also adds a WhatsApp button in the hero, an "Ask about this room" link on each room, and a floating WhatsApp button on desktop (the mobile bar already covers phones). Every one of them pre-fills `wa_text`; `room_wa_text` can use `{room}` and `{name}` |
+| `review_source` | optional, e.g. `"Airbnb"` | Where the rating and reviews come from. Defaults to `"Google"` |
+| `reviews_link` | optional URL | Where the rating badge links. Defaults to `maps_link` |
 | `photo_labels` | optional list | One label per gallery photo (e.g. `"Exterior"`), used as alt text and shown in the lightbox |
 
 A review can carry `"placeholder": true`. Its caption then reads "Review

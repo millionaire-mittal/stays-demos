@@ -456,15 +456,19 @@ def context(lead: dict) -> dict:
                 .format(room=r["name"], name=lead["name"])),
         })
 
+    source = lead.get("review_source", "Google")
     reviews = [{"text": r["text"].strip(), "first": r["name"].split()[0],
-                "source": "Review placeholder" if r.get("placeholder") else "Google review"}
+                "source": "Review placeholder" if r.get("placeholder") else f"{source} review"}
                for r in lead["reviews"]]
     page_url = f"{BASE_URL}/{slug}/"
     rating = float(lead["rating"])
+    rating_txt = f"{rating:.1f}" if round(rating, 1) == rating else f"{rating:.2f}"
 
     return {
         **{k: v for k, v in lead.items() if isinstance(v, (str, int, float))},
-        "rating": f"{rating:.1f}",
+        "rating": rating_txt,
+        "review_source": source,
+        "reviews_link": lead.get("reviews_link") or lead["maps_link"],
         "review_count": fmt_count(lead["review_count"]),
         "css_vars": css_vars,
         "scheme": pal["scheme"],
@@ -485,7 +489,7 @@ def context(lead: dict) -> dict:
         "og_image": page_url + "img/hero.jpg",
         "title": f"{lead['name']} | {lead['type']} in {lead['town']}",
         "description": f"{lead['type']} in {lead['town']}, {lead['region']}. "
-                       f"{rating:.1f} stars from {fmt_count(lead['review_count'])} Google reviews. {lead['subline']}",
+                       f"{rating_txt} stars from {fmt_count(lead['review_count'])} {source} reviews. {lead['subline']}",
         "phone_href": "tel:" + re.sub(r"[^\d+]", "", lead["phone"]),
         "wa_href": f"https://wa.me/{lead['whatsapp']}",
         "js_data": json.dumps({"name": lead["name"], "wa": str(lead["whatsapp"])},

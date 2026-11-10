@@ -484,5 +484,116 @@
     "accent": "#C87950",
     "mood": "light",
     "photos": 8
+  },
+  {
+    "slug": "bandharwada-udaipur",
+    "name": "Bandharwada",
+    "type": "Boutique penthouse",
+    "town": "Udaipur",
+    "region": "Rajasthan",
+    "country": "India",
+    "phone": "+91 00000 00000",
+    "whatsapp": "910000000000",
+    "rating": 4.97,
+    "review_count": 34,
+    "review_source": "Airbnb",
+    "reviews_link": "https://www.airbnb.co.in/rooms/1702020515442317006",
+    "maps_link": "https://www.google.com/maps/search/?api=1&query=Bandharwada%203BHK%20Boutique%20Penthouse%20Udaipur",
+    "map_query": "Bandharwada 3BHK Boutique Penthouse Udaipur",
+    "checkin": "2:00 pm",
+    "checkout": "10:00 am",
+    "headline": "A boutique penthouse above the city. Three bedrooms, a private pool, and space to gather.",
+    "subline": "Bandharwada is a 3-bedroom boutique penthouse in Udaipur, designed as an entire-home stay for families and groups. With room for seven guests, a private pool, and thoughtfully designed interiors, it offers the privacy of a home with the polish of a curated boutique stay.",
+    "highlights": [
+      "A private pool for slow mornings and evenings by the water",
+      "Three bedrooms and space for up to seven guests",
+      "Boutique interiors with the warmth of a real home"
+    ],
+    "amenities": [
+      "Entire private home",
+      "3 bedrooms",
+      "Sleeps up to 7 guests",
+      "Private pool",
+      "Boutique penthouse setting",
+      "Self check-in with building staff"
+    ],
+    "rooms": [
+      {
+        "name": "Bedrooms",
+        "sleeps": "Three bedrooms",
+        "note": "Separate bedrooms for families and groups, up to seven guests in all."
+      },
+      {
+        "name": "Living areas",
+        "sleeps": "Shared",
+        "note": "Spaces designed for gathering, dining and relaxing."
+      },
+      {
+        "name": "Private pool",
+        "sleeps": "Just for you",
+        "note": "The home's signature outdoor experience."
+      },
+      {
+        "name": "Penthouse setting",
+        "sleeps": "Top floor",
+        "note": "A boutique, elevated stay in Udaipur."
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Sathwik",
+        "text": "Super peaceful place that's accessible to all major attractions and even the airport. The property was secluded, squeaky clean, calming and aesthetic.  The host too was super friendly and really responsive throughout the stay. Would definitely recommend to anyone looking for a great stay in Udaipur."
+      },
+      {
+        "name": "Aman Bharat",
+        "text": "The residence offered an exceptionally serene atmosphere that truly enhanced our overall travel experience. We were particularly impressed by the stunning aesthetic choices that made every corner of the home feel sophisticated and welcoming. Spending afternoons by the private swimming pool provided the perfect opportunity to relax and unwind in total tranquility. Everything about the property was maintained to a high standard, ensuring our stay was both comfortable and memorable. Lastly, Chetna was very welcoming and helpful during our stay."
+      },
+      {
+        "name": "Ayushi",
+        "text": "What a lovely house! Everything was beautiful, thoughtfully kept, and just perfect for a comfortable stay. We had such a great time and truly enjoyed our stay.\nChetna was absolutely wonderful so warm, helpful, and lovely to coordinate with. Would happily stay here again!"
+      }
+    ],
+    "nearby": [
+      "Lake Pichola",
+      "City Palace",
+      "Fateh Sagar Lake",
+      "The old city",
+      "Maharana Pratap Airport"
+    ],
+    "good_to_know": {
+      "heading": "Good to *know*",
+      "points": [
+        "Check-in after 2:00 PM",
+        "Check-out before 10:00 AM",
+        "Self check-in with building staff",
+        "Up to 7 overnight guests",
+        "No pets",
+        "Smoking (including vaping) allowed outdoors only",
+        "Quiet hours: 10:00 PM to 8:00 AM",
+        "No parties or events",
+        "No commercial photography or filming",
+        "Follow @bandharwada.house on Instagram for Udaipur inspiration"
+      ]
+    },
+    "booking": {
+      "heading": "Reserve *Bandharwada*",
+      "subtext": "Plan your Udaipur stay at a private 3BHK boutique penthouse with a pool, designed for groups who value space, privacy and style.",
+      "cta": "Check availability",
+      "wa_text": "Hi, I'd like to check availability at Bandharwada for [check-in date] to [check-out date] for [number] guests.",
+      "room_wa_text": "Hi, I have a question about the {room} at {name}."
+    },
+    "photo_labels": [
+      "Private pool at night",
+      "Living and dining",
+      "Bedroom with daybed",
+      "Living room",
+      "Bedroom",
+      "Dining corner",
+      "Kitchen",
+      "Rooftop terrace at dusk"
+    ],
+    "accent": "#B5653F",
+    "mood": "light",
+    "photos": 8
   }
 ]
