@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cloudwood Resort | Nature Retreat in Wayanad, Kerala</title>
+<meta name="description" content="A premium nature retreat in Wayanad, designed for misty mornings, quiet evenings and unforgettable hill-country escapes.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#f8f4ea; --sand:#ece5d3; --moss:#8c9b70; --mossl:#dfe5cf; --forest:#1f3a2d; --forest2:#142720; --clay:#9a6b4b; --char:#26262a; --gold:#b99a56; --muted:#665f55;
+  --serif:'Fraunces',Georgia,serif; --sans:'DM Sans',system-ui,sans-serif;
+  --r:22px; --shadow:0 18px 50px -22px rgba(20,39,32,.45);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:74px}
+body{font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.7;color:var(--char);background:var(--ivory);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1;letter-spacing:-.015em}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+section{padding:clamp(70px,10vw,130px) 0}
+.eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:400;color:var(--clay);display:block;margin-bottom:18px}
+h2{font-size:clamp(36px,5.2vw,62px);color:var(--forest)}
+h2 em,h1 em{font-style:italic;color:var(--clay)}
+.lead{max-width:640px;margin-top:22px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 30px;border-radius:999px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;border:1px solid transparent;cursor:pointer;transition:.35s;font-family:var(--sans)}
+.btn-solid{background:var(--forest);color:var(--ivory)}
+.btn-solid:hover{background:var(--clay);transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(255,255,255,.7);color:#fff}
+.btn-ghost:hover{background:#fff;color:var(--forest)}
+.btn-line{border-color:var(--forest);color:var(--forest)}
+.btn-line:hover{background:var(--forest);color:var(--ivory)}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:#fff;color:var(--forest)}
+
+nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:.4s;padding:20px 0}
+nav .wrap{display:flex;align-items:center;justify-content:space-between}
+nav.solid{background:rgba(248,244,234,.94);backdrop-filter:blur(12px);padding:12px 0;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.logo{font-family:var(--serif);font-size:25px;color:#fff;line-height:1;transition:.3s;display:flex;align-items:baseline;gap:8px}
+.logo small{font-family:var(--sans);font-size:10px;letter-spacing:.38em;text-transform:uppercase;opacity:.85}
+nav.solid .logo{color:var(--forest)}
+.links{display:flex;align-items:center;gap:30px}
+.links a:not(.btn){font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#fff;position:relative}
+nav.solid .links a:not(.btn){color:var(--char)}
+.links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--gold);transition:.3s}
+.links a:not(.btn):hover::after{width:100%}
+.links .btn{padding:11px 22px;background:var(--ivory);color:var(--forest)}
+nav.solid .links .btn{background:var(--forest);color:var(--ivory)}
+.burger{display:none;background:none;border:0;width:32px;height:22px;position:relative;cursor:pointer;z-index:2}
+.burger span{position:absolute;left:0;width:100%;height:1.5px;background:#fff;transition:.3s}
+nav.solid .burger span{background:var(--char)}
+.burger span:nth-child(1){top:2px}.burger span:nth-child(2){top:10px}.burger span:nth-child(3){top:18px}
+nav.open .burger span{background:#fff}
+nav.open .burger span:nth-child(1){top:10px;transform:rotate(45deg)}
+nav.open .burger span:nth-child(2){opacity:0}
+nav.open .burger span:nth-child(3){top:10px;transform:rotate(-45deg)}
+
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;padding:0 0 clamp(60px,9vw,110px);overflow:hidden;background:var(--forest2)}
+/* HERO_IMAGE: replace img/cottage-sun.jpg (or use a muted looping <video>) */
+.hero-bg{position:absolute;inset:-8% 0;background:url(img/cottage-sun.jpg) center 60%/cover;will-change:transform}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,22,16,.78) 0%,rgba(10,22,16,.35) 55%,rgba(10,22,16,.1) 100%),linear-gradient(180deg,rgba(10,22,16,.45) 0%,rgba(10,22,16,0) 35%,rgba(10,22,16,.6) 100%)}
+.hero .wrap{position:relative;z-index:2}
+.hero .eyebrow{color:#e3d09b}
+.hero h1{font-size:clamp(46px,8vw,104px);max-width:900px}
+.hero h1 em{color:#d9e2bf}
+.hero p{max-width:560px;margin:26px 0 38px;font-size:19px;opacity:.92}
+.ctas{display:flex;gap:14px;flex-wrap:wrap}
+.scroll{position:absolute;right:30px;bottom:44px;z-index:2;writing-mode:vertical-rl;font-size:11px;letter-spacing:.3em;text-transform:uppercase;opacity:.75;display:flex;align-items:center;gap:14px}
+.scroll::after{content:"";width:1px;height:54px;background:#fff;animation:drip 2.2s infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+.trust{background:var(--forest);color:var(--mossl);padding:26px 0}
+.trust ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 0}
+.trust li{font-family:var(--serif);font-size:19px;font-style:italic;padding:0 26px;position:relative}
+.trust li+li::before{content:"✦";position:absolute;left:-6px;color:var(--gold);font-size:10px;font-style:normal;top:9px}
+
+.about .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,90px);align-items:center}
+.about .copy p{color:var(--muted);margin-top:26px}
+.about .sup{font-family:var(--serif);font-style:italic;font-size:clamp(21px,2.3vw,27px);line-height:1.4;color:var(--forest);margin-top:34px;padding-left:22px;border-left:2px solid var(--gold)}
+.imgs{position:relative;padding-bottom:70px}
+.imgs .i1{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3.2}
+.imgs .i2{position:absolute;right:-4%;bottom:0;width:48%;aspect-ratio:1;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);border:6px solid var(--ivory)}
+.imgs img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.imgs>div:hover img{transform:scale(1.05)}
+
+.stays{background:var(--sand)}
+.head{max-width:700px;margin-bottom:56px}
+.sgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.sc{background:var(--ivory);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr;transition:.5s}
+.sc:hover{transform:translateY(-6px)}
+.sc .si{aspect-ratio:16/10;overflow:hidden}
+.sc img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.sc:hover img{transform:scale(1.06)}
+.sb{padding:28px 30px 32px}
+.sb h3{font-size:34px;color:var(--forest)}
+.sb p{color:var(--muted);font-size:16px;margin:8px 0 22px}
+.sb .btn{padding:12px 24px}
+
+.xgrid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+.xc{position:relative;border-radius:var(--r);overflow:hidden;min-height:340px;color:#fff;display:flex;align-items:flex-end;padding:28px}
+.xc:nth-child(1){grid-column:span 5}.xc:nth-child(2){grid-column:span 7}
+.xc:nth-child(3){grid-column:span 7}.xc:nth-child(4){grid-column:span 5}
+.xc img,.xc .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.xc:hover img,.xc:hover .ph{transform:scale(1.06)}
+.xc::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(10,22,16,.75))}
+.xc h3{position:relative;z-index:2;font-size:clamp(26px,3vw,36px)}
+.ph{display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:.3em;color:rgba(255,255,255,.6);background:linear-gradient(155deg,#8c9b70,#4b6b50 55%,#1f3a2d)}
+.ph span{position:relative;top:-40px;border:1px dashed rgba(255,255,255,.5);padding:10px 16px;border-radius:10px;z-index:1}
+
+.band{position:relative;padding:clamp(100px,16vw,200px) 0;color:#fff;text-align:center;overflow:hidden}
+.band .b{position:absolute;inset:-12% 0;background:url(img/swing.jpg) center/cover;will-change:transform}
+.band::before{content:"";position:absolute;inset:0;z-index:1;background:rgba(20,39,32,.55)}
+.band .wrap{position:relative;z-index:2}
+.band p{font-family:var(--serif);font-style:italic;font-size:clamp(28px,4.4vw,56px);line-height:1.2;max-width:900px;margin:auto}
+
+.cols{columns:3;column-gap:16px}
+.cols figure{break-inside:avoid;margin-bottom:16px;border-radius:16px;overflow:hidden;cursor:zoom-in;background:var(--sand)}
+.cols img{width:100%;height:auto;transition:transform 1s}
+.cols figure:hover img{transform:scale(1.05)}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(10,18,14,.92);display:none;align-items:center;justify-content:center;padding:30px;cursor:zoom-out}
+.lb.on{display:flex}.lb img{max-height:88vh;max-width:92vw;border-radius:12px}
+
+.loc{background:var(--sand)}
+.loc .grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,5vw,70px);align-items:center}
+.loc p{color:var(--muted);margin:22px 0 32px}
+.map{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3.1;background:var(--mossl)}
+.map iframe{width:100%;height:100%;border:0;filter:saturate(.8) sepia(.1)}
+
+.contact{position:relative;color:#fff;background:var(--forest2)}
+/* CTA_BACKGROUND: swap img/aerial-night.jpg */
+.contact .bg{position:absolute;inset:0;background:url(img/aerial-night.jpg) center/cover;opacity:.4}
+.contact::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,39,32,.95),rgba(20,39,32,.65))}
+.contact .wrap{position:relative;z-index:1;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,90px);align-items:start}
+.contact h2{color:#fff}.contact .eyebrow{color:var(--gold)}.contact .lead{color:var(--mossl)}
+.alt{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.cd{list-style:none;margin-top:34px;font-size:15px;display:grid;gap:10px}
+.cd span{color:var(--gold);font-size:11px;letter-spacing:.22em;text-transform:uppercase;display:inline-block;min-width:100px}
+form{background:var(--ivory);color:var(--char);border-radius:var(--r);padding:clamp(26px,4vw,46px);box-shadow:0 30px 70px -25px rgba(0,0,0,.5)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.f{margin-bottom:18px}
+.f label{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;font-weight:400}
+.f input,.f select,.f textarea{width:100%;font:inherit;font-size:16px;padding:13px 15px;border:1px solid #ddd3bb;border-radius:12px;background:#fff;color:var(--char);transition:.25s}
+.f input:focus,.f select:focus,.f textarea:focus{outline:0;border-color:var(--forest);box-shadow:0 0 0 3px rgba(31,58,45,.12)}
+form .btn{width:100%;margin-top:6px}
+.ok{display:none;text-align:center;padding:50px 10px}
+.ok h3{font-size:38px;color:var(--forest);margin-bottom:12px}.ok p{color:var(--muted)}
+form.sent .fields{display:none}form.sent .ok{display:block}
+.toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,40px);opacity:0;background:var(--forest2);color:#fff;padding:12px 22px;border-radius:999px;font-size:14px;z-index:120;transition:.4s;pointer-events:none;max-width:90vw;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+footer{background:var(--char);color:#c9c5ba;padding:70px 0 34px}
+footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+footer h4{font-family:var(--serif);font-size:30px;font-weight:400;color:#fff}
+footer .k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:block}
+footer p,footer a{font-size:15px}footer a:hover{color:var(--gold)}
+.small{margin-top:50px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:12.5px;opacity:.65}
+
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.hero-bg,.band .b{transform:none!important}}
+
+@media(max-width:980px){
+  .about .grid,.loc .grid,.contact .wrap,footer .grid{grid-template-columns:1fr}
+  .cols{columns:2}
+  .imgs .i2{right:2%}
+}
+@media(max-width:820px){
+  .burger{display:block}
+  .links{position:fixed;inset:0;background:var(--forest2);flex-direction:column;justify-content:center;gap:26px;opacity:0;pointer-events:none;transition:.4s}
+  nav.open .links{opacity:1;pointer-events:auto}
+  .links a:not(.btn){font-size:22px;font-family:var(--serif);text-transform:none;letter-spacing:0}
+  nav.open .logo{color:#fff}
+  .links .btn{background:var(--gold)!important;color:#fff!important}
+  .scroll{display:none}
+}
+@media(max-width:700px){
+  body{font-size:16px}
+  .sgrid{grid-template-columns:1fr}
+  .xgrid{grid-template-columns:1fr}
+  .xc:nth-child(n){grid-column:auto;min-height:280px}
+  .row{grid-template-columns:1fr;gap:0}
+  .trust li{padding:0 16px;font-size:16px}
+  .cols{column-gap:12px}.cols figure{margin-bottom:12px}
+  .hero .btn{flex:1 1 100%}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav"><div class="wrap">
+  <a href="#top" class="logo">Cloudwood <small>Resort</small></a>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="links" id="links">
+    <a href="#about">About</a><a href="#stays">Stays</a><a href="#experiences">Experiences</a><a href="#gallery">Gallery</a><a href="#location">Location</a><a href="#contact">Contact</a>
+    <a href="#contact" class="btn">Plan Your Stay</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="wrap">
+    <span class="eyebrow rv">Wayanad, Kerala</span>
+    <h1 class="rv d1">Where the Hills <em>Become Your Escape</em></h1>
+    <p class="rv d2">Cloudwood Resort is a premium nature retreat in Wayanad—designed for misty mornings, quiet evenings, and unforgettable hill-country escapes.</p>
+    <div class="ctas rv d2">
+      <a href="#about" class="btn btn-gold">Explore the Resort</a>
+      <a href="#contact" class="btn btn-ghost">Plan Your Stay</a>
+    </div>
+  </div>
+  <div class="scroll">Scroll</div>
+</header>
+
+<div class="trust"><ul>
+  <li>Wayanad, Kerala</li><li>Premium Cottages</li><li>Nature Retreat</li><li>Peaceful Escape</li><li>Ideal for Couples &amp; Families</li><li>Curated Hospitality</li>
+</ul></div>
+
+<section class="about" id="about"><div class="wrap grid">
+  <div class="copy">
+    <span class="eyebrow rv">About</span>
+    <h2 class="rv">A Retreat <em>Above the Everyday</em></h2>
+    <p class="rv">Cloudwood Resort is a premium getaway in Wayanad, created for travellers seeking space, calm, and a deeper connection with nature. Surrounded by the region’s hills and greenery, it offers a peaceful base for couples, families, and small groups.</p>
+    <div class="sup rv">Wake up to misty mornings, unwind in nature, and let Wayanad set the pace for your escape.</div>
+  </div>
+  <div class="imgs rv d1">
+    <!-- ABOUT_IMAGE_1 / ABOUT_IMAGE_2 -->
+    <div class="i1"><img src="img/cottage-front.jpg" alt="Cottage framed by greenery" loading="lazy"></div>
+    <div class="i2"><img src="img/swing.jpg" alt="Garden swing among areca palms" loading="lazy"></div>
+  </div>
+</div></section>
+
+<section class="stays" id="stays"><div class="wrap">
+  <div class="head"><span class="eyebrow rv">Stays</span><h2 class="rv">Stay Close <em>to Nature</em></h2>
+  <p class="lead rv">Stay categories are indicative. Final room types and details to be confirmed by the property.</p></div>
+  <div class="sgrid">
+    <article class="sc rv"><div class="si"><img src="img/cottage-sun.jpg" alt="Cottage with green metal roof" loading="lazy"></div><div class="sb"><h3>Premium Cottage</h3><p>A private cottage set among areca palms and lawns, made for quiet days in the hills.</p><a class="btn btn-line" href="#contact" data-stay="Cottage">View Stay</a></div></article>
+    <article class="sc rv d1"><div class="si"><img src="img/play-mist.jpg" alt="Lawn and play area in the mist" loading="lazy"></div><div class="sb"><h3>Family Stay</h3><p>Open lawns and room to roam, so everyone from kids to grandparents can slow down together.</p><a class="btn btn-line" href="#contact" data-stay="Family">View Stay</a></div></article>
+    <article class="sc rv"><div class="si"><img src="img/cottages-hill.jpg" alt="Cottages on a green hillside" loading="lazy"></div><div class="sb"><h3>Group Escape</h3><p>A cluster of cottages across the hillside—a shared base for friends and extended families.</p><a class="btn btn-line" href="#contact" data-stay="Group">View Stay</a></div></article>
+    <article class="sc rv d1"><div class="si"><img src="img/cottage-sun.jpg" alt="Cottage porch" loading="lazy" style="object-position:70% 60%"></div><div class="sb"><h3>Romantic Getaway</h3><p>Quiet porches, forest air and unhurried evenings for two.</p><a class="btn btn-line" href="#contact" data-stay="Romantic">View Stay</a></div></article>
+  </div>
+</div></section>
+
+<section id="experiences"><div class="wrap">
+  <div class="head"><span class="eyebrow rv">Experiences</span><h2 class="rv">Made for <em>Slow Hill Days</em></h2>
+  <p class="lead rv">From misty mornings to campfire evenings, Cloudwood Resort is designed around the moments that make a Wayanad escape memorable.</p></div>
+  <div class="xgrid">
+    <div class="xc rv"><img src="img/pool-mist.jpg" alt="Misty morning by the pool" loading="lazy"><h3>Misty Mornings</h3></div>
+    <div class="xc rv d1"><img src="img/swing.jpg" alt="Forest greenery" loading="lazy" style="object-position:center 40%"><h3>Nature Walks</h3></div>
+    <div class="xc rv"><img src="img/campfire.jpg" alt="Friends around a campfire" loading="lazy"><h3>Campfire Evenings</h3></div>
+    <!-- EXPERIENCE_EXPLORE: Wayanad viewpoint, wildlife or local scenery -->
+    <div class="xc rv d1"><div class="ph"><span>EXPERIENCE_EXPLORE</span></div><h3>Local Discovery</h3></div>
+  </div>
+</div></section>
+
+<div class="band"><div class="b" id="bandBg"></div><div class="wrap"><p class="rv">Let Wayanad set the pace.</p></div></div>
+
+<section id="gallery"><div class="wrap">
+  <div class="head"><span class="eyebrow rv">Gallery</span><h2 class="rv">A Glimpse <em>of Cloudwood</em></h2></div>
+  <div class="cols">
+    <figure class="rv"><img src="img/entrance-night.jpg" alt="Resort entrance at night" loading="lazy"></figure>
+    <figure class="rv d1"><img src="img/pool-mist.jpg" alt="Pool in the morning mist" loading="lazy"></figure>
+    <figure class="rv d2"><img src="img/gate.jpg" alt="Resort gate among foliage" loading="lazy"></figure>
+    <figure class="rv"><img src="img/aerial-night.jpg" alt="Resort from above at dusk" loading="lazy"></figure>
+    <figure class="rv d1"><img src="img/cottages-hill.jpg" alt="Cottages on the hillside" loading="lazy"></figure>
+    <figure class="rv d2"><img src="img/swing.jpg" alt="Garden swing and benches" loading="lazy"></figure>
+    <figure class="rv"><img src="img/cricket.jpg" alt="Cricket net on the grounds" loading="lazy"></figure>
+    <figure class="rv d1"><img src="img/slide.jpg" alt="Play area on the lawn" loading="lazy"></figure>
+    <figure class="rv d2"><img src="img/cottage-front.jpg" alt="Cottage front" loading="lazy"></figure>
+  </div>
+</div></section>
+<div class="lb" id="lb"><img alt=""></div>
+
+<section class="loc" id="location"><div class="wrap grid">
+  <div>
+    <span class="eyebrow rv">Location</span>
+    <h2 class="rv">In the Heart <em>of Wayanad</em></h2>
+    <p class="rv">Cloudwood Resort is located in Pulpally, Wayanad—an area known for its forests, plantations, wildlife, and peaceful hill-country atmosphere.</p>
+    <a class="btn btn-solid rv" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Cloudwood+Resort+Pulpally+Wayanad+Kerala">Get Directions</a>
+  </div>
+  <div class="map rv d1"><iframe title="Map of Cloudwood Resort" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Cloudwood%20Resort%20Pulpally%20Wayanad%20Kerala&output=embed"></iframe></div>
+</div></section>
+
+<section class="contact" id="contact">
+  <div class="bg"></div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow rv">Enquire</span>
+      <h2 class="rv">Plan Your <em style="color:#d9e2bf">Wayanad Escape</em></h2>
+      <p class="lead rv">Tell us your dates, group size, and preferred stay type. We’ll help you plan the right Cloudwood experience.</p>
+      <div class="alt rv">
+        <a class="btn btn-gold" href="https://www.instagram.com/cloudwood_resort" target="_blank" rel="noopener">DM on Instagram</a>
+        <button class="btn btn-ghost" id="wa" type="button">WhatsApp</button>
+      </div>
+      <ul class="cd rv"><li><span>Instagram</span><a href="https://www.instagram.com/cloudwood_resort" target="_blank" rel="noopener">@cloudwood_resort</a></li><li><span>Location</span>Wayanad, Kerala</li></ul>
+    </div>
+    <form id="form" class="rv d1" novalidate>
+      <div class="fields">
+        <div class="row">
+          <div class="f"><label for="n">Name</label><input id="n" required autocomplete="name"></div>
+          <div class="f"><label for="e">Email</label><input id="e" type="email" required autocomplete="email"></div>
+        </div>
+        <div class="row">
+          <div class="f"><label for="p">Phone / WhatsApp</label><input id="p" type="tel" required autocomplete="tel"></div>
+          <div class="f"><label for="s">Stay type</label><select id="s"><option>Cottage</option><option>Family</option><option>Group</option><option>Romantic</option></select></div>
+        </div>
+        <div class="row">
+          <div class="f"><label for="ci">Check-in</label><input id="ci" type="date"></div>
+          <div class="f"><label for="co">Check-out</label><input id="co" type="date"></div>
+        </div>
+        <div class="f"><label for="g">Number of guests</label><input id="g" type="number" min="1"></div>
+        <div class="f"><label for="m">Message</label><textarea id="m" rows="3"></textarea></div>
+        <button class="btn btn-solid" type="submit">Request Availability</button>
+      </div>
+      <div class="ok"><h3>Thank you.</h3><p>Your enquiry has been noted. Our team will be in touch shortly to help plan your stay.</p></div>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div class="grid">
+    <div><h4>Cloudwood Resort</h4><p style="margin-top:8px">Premium Cottages | Nature Retreat | Peaceful Escapes</p></div>
+    <div><span class="k">Find us</span><p>Wayanad, Kerala</p></div>
+    <div><span class="k">Follow</span><p><a href="https://www.instagram.com/cloudwood_resort" target="_blank" rel="noopener">Instagram: @cloudwood_resort</a></p></div>
+  </div>
+  <p class="small">Demo website concept for Cloudwood Resort. Final location, amenities, room types, pricing, and policies to be confirmed by the property.</p>
+</div></footer>
+<div class="toast" id="toast"></div>
+
+<script>
+const nav=document.getElementById('nav'),bg=document.getElementById('heroBg'),bb=document.getElementById('bandBg');
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function onScroll(){
+  nav.classList.toggle('solid',scrollY>60);
+  if(reduce)return;
+  if(scrollY<innerHeight*1.2)bg.style.transform='translateY('+scrollY*.25+'px)';
+  const r=bb.parentElement.getBoundingClientRect();
+  if(r.top<innerHeight&&r.bottom>0)bb.style.transform='translateY('+(-r.top*.12)+'px)';
+}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+document.getElementById('burger').onclick=()=>nav.classList.toggle('open');
+document.querySelectorAll('#links a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.querySelectorAll('[data-stay]').forEach(a=>a.addEventListener('click',()=>{document.getElementById('s').value=a.dataset.stay}));
+const lb=document.getElementById('lb');
+document.querySelectorAll('.cols img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.src;lb.classList.add('on')});
+lb.onclick=()=>lb.classList.remove('on');
+addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+const t=document.getElementById('toast');
+document.getElementById('wa').onclick=()=>{t.textContent='WhatsApp number to be confirmed by the property.';t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2800)};
+const f=document.getElementById('form');
+f.addEventListener('submit',e=>{
+  e.preventDefault();let ok=true;
+  f.querySelectorAll('[required]').forEach(i=>{const bad=!i.value.trim()||(i.type==='email'&&!/^\S+@\S+\.\S+$/.test(i.value));i.style.borderColor=bad?'#9a6b4b':'';if(bad)ok=false});
+  if(ok){f.classList.add('sent');f.scrollIntoView({behavior:'smooth',block:'center'})}
+});
+</script>
+</body>
+</html>
